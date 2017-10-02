@@ -11,11 +11,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
+import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
 import app.dalboot.mobiavialdo.com.daleboot.adapters.FormAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.adapters.NotificationAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentNotificationsBinding;
+import app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers;
+import app.dalboot.mobiavialdo.com.daleboot.models.Notifications;
+import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -81,17 +91,18 @@ public class NotificationsFragment extends Fragment {
 
     private void loadViews() {
         initrecyclerview();
+        getNotifications();
 
     }
     private void initrecyclerview() {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         binding.notificationRecylerview.setLayoutManager(mLayoutManager);
         binding.notificationRecylerview.setItemAnimator(new DefaultItemAnimator());
-        setAdapter();
+
     }
 
-    private void setAdapter() {
-        NotificationAdapter adapter=new NotificationAdapter(this.getContext());
+    private void setAdapter(ArrayList<Notifications.Datum> notificationslist) {
+        NotificationAdapter adapter=new NotificationAdapter(this.getContext(),notificationslist);
         binding.notificationRecylerview.setAdapter(adapter);
     }
 
@@ -104,7 +115,7 @@ public class NotificationsFragment extends Fragment {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement OnAdditionalInfoInteractionListener");
         }
     }
 
@@ -113,6 +124,15 @@ public class NotificationsFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+    private void getNotifications(){
+        RestClient.getAuthAdapter().getNotifications().enqueue(new GeneralCallBack<Notifications>(getContext()) {
+            @Override
+            public void onSuccess(Notifications response) {
+                setAdapter(response.getData());
+            }
+        });
+    }
+
 
     /**
      * This interface must be implemented by activities that contain this

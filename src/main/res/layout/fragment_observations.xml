@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:ls="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/large_padding"
+
+
+    tools:context="app.dalboot.mobiavialdo.com.daleboot.forms.ObservationsForm">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/arch_height_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/v_small_text_size"
+            android:paddingLeft="@dimen/normal_padding"/>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/colorPrimary"
+        android:thumbTint="@color/white"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:id="@+id/arch_height_seekbar"
+
+
+        />
+
+        <com.farbod.labelledspinner.LabelledSpinner
+            android:id="@+id/heel_stancespinner"
+            ls:labelText="@string/heel_stance_hint"
+            ls:widgetColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ls:entries="@color/dark_grey"
+
+            />
+        <com.farbod.labelledspinner.LabelledSpinner
+            android:id="@+id/ankle_spinner"
+            ls:labelText="@string/ankle_hint"
+            ls:widgetColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ls:entries="@color/dark_grey"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dor_suf_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/v_small_text_size"
+            />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/colorPrimary"
+            android:thumbTint="@color/white"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:id="@+id/dorsifloxion_seekbar"
+
+
+            />
+        <com.farbod.labelledspinner.LabelledSpinner
+            android:id="@+id/exostosis_spinner"
+            ls:labelText="@string/exostosis_hint"
+            ls:widgetColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ls:entries="@color/dark_grey"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diff_lenght_legs_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/v_small_text_size"
+           />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:id="@+id/legs_sizes_layout">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                >
+
+            <EditText
+                android:id="@+id/left_leg"
+                style="@style/CustomEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/left_leg_hint"
+                android:inputType="number"
+
+
+                />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/normal_margin"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/right_leg"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/right_leg_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <com.farbod.labelledspinner.LabelledSpinner
+            android:id="@+id/food_bed_spinner"
+            ls:labelText="@string/exostosis_hint"
+            ls:widgetColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ls:entries="@color/dark_grey"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/windlass_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/v_small_text_size"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:id="@+id/wind_lass_layout">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                >
+
+                <EditText
+                    android:id="@+id/left_windlass"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/left_leg_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/normal_margin"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/right_wind_lass"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/right_leg_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fore_foot_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/v_small_text_size"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:id="@+id/fore_foot_layout">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                >
+
+                <EditText
+                    android:id="@+id/left_forefoot"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/left_leg_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/normal_margin"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/right_forefoot"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/right_leg_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rom_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/v_small_text_size"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:id="@+id/rom_layout">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                >
+
+                <EditText
+                    android:id="@+id/left_rom"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/left_leg_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/normal_margin"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/right_rom"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/right_leg_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+</layout>

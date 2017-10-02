@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/large_padding"
+    tools:context="app.dalboot.mobiavialdo.com.daleboot.forms.RecieptForm">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/small_margin"
+
+
+
+            >
+
+            <EditText
+                android:id="@+id/deposit"
+                style="@style/CustomEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/deposit_hint"
+                android:inputType="number"
+
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/small_margin"
+
+
+
+            >
+
+            <EditText
+                android:id="@+id/pickup_date"
+                style="@style/CustomEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pickup_date_hint"
+                android:inputType="number"
+
+
+                />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/small_margin"
+
+
+
+            >
+
+            <EditText
+                android:id="@+id/amount_paid"
+                style="@style/CustomEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/amount_paid_hint"
+                android:inputType="number"
+
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="@dimen/small_margin"
+
+
+
+            >
+
+            <EditText
+                android:id="@+id/invoice_number"
+                style="@style/CustomEditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/invoice_number_hint"
+                android:inputType="number"
+
+
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+</RelativeLayout>
+    </layout>

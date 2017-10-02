@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ls="http://schemas.android.com/apk/res-auto">
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/large_padding"
+    tools:context="app.dalboot.mobiavialdo.com.daleboot.forms.BootSpecificationForm">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.farbod.labelledspinner.LabelledSpinner
+                android:id="@+id/model_selection_spinner"
+                ls:labelText="@string/model_selection_hint"
+                ls:widgetColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ls:entries="@color/dark_grey"
+
+                />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/small_margin"
+
+
+
+                >
+
+                <EditText
+                    android:id="@+id/size"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/size_label"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/small_margin"
+
+
+
+                >
+
+                <EditText
+                    android:id="@+id/linner_size"
+                    style="@style/CustomEditTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/linner_size_hint"
+                    android:inputType="number"
+
+
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <com.farbod.labelledspinner.LabelledSpinner
+                android:id="@+id/linner_type_spinner"
+                ls:labelText="@string/linner_type_hint"
+                ls:widgetColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ls:entries="@color/dark_grey"
+
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+</layout>

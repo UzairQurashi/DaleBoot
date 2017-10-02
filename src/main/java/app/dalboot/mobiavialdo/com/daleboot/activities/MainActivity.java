@@ -5,24 +5,33 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.adapters.NavigationPagerAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.ActivityMainBinding;
 import app.dalboot.mobiavialdo.com.daleboot.fragments.FormsFragment;
 import app.dalboot.mobiavialdo.com.daleboot.fragments.NotificationsFragment;
+import app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers;
+import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
+import app.dalboot.mobiavialdo.com.daleboot.utils.NavigationUtils;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends BaseActivity implements
         FormsFragment.OnFragmentInteractionListener,
         NotificationsFragment.OnFragmentInteractionListener{
     private ActivityMainBinding binding;
-    private NavigationPagerAdapter pagerAdapter;
+    private int[]tabicons=new int[]{R.drawable.form_tabs,R.drawable.notifications_tabs};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +48,11 @@ public class MainActivity extends BaseActivity implements
      * this method will loads an screen view
      */
     private void loadViews() {
-        setSupportActionBar(binding.toolbar);
+        setSupportActionBar(binding.appbar.toolbar);
+        setTittle("Forms");
         setViewPager();
         setEventsListners();
+
 
     }
 
@@ -53,14 +64,23 @@ public class MainActivity extends BaseActivity implements
      * this method will sets adapter of viewpager  and associated with tablayout.
      */
     private void setViewPager() {
-        pagerAdapter = new NavigationPagerAdapter(getSupportFragmentManager());
-        pagerAdapter.addFragment(FormsFragment.newInstance("", ""), "Forms", null);
-        pagerAdapter.addFragment(NotificationsFragment.newInstance("", ""), "Notifications", null);
-        binding.mainPager.setAdapter(pagerAdapter);
+
+        binding.mainPager.setAdapter(NavigationUtils.getPagerAdapter(this,getSupportFragmentManager()));
         binding.tab.setupWithViewPager(binding.mainPager);
-        pagerAdapter.setTabicons(binding.tab);
+        setTabicons(binding.tab);
 
 
+
+
+    }
+    /**
+     * this method will set an tab icons
+     * @param tabLayout
+     */
+    public void setTabicons(TabLayout tabLayout)
+    {
+        tabLayout.getTabAt(0).setIcon(tabicons[0]);
+        tabLayout.getTabAt(1).setIcon(tabicons[1]);
 
 
     }
@@ -72,18 +92,23 @@ public class MainActivity extends BaseActivity implements
     private void setToolbarTittle(int position) {
         switch (position) {
             case 0:
-                binding.mainToolbarTitle.setText("" + "Forms");
+                setTittle("Forms");
 
                 break;
             case 1:
-                binding.mainToolbarTitle.setText("" + "Notifications");
-                break;
+                setTittle("Notifications");
+                 break;
 
             default:
                 break;
 
 
         }
+    }
+    private void setTittle(String s) {
+        binding.appbar.mainToolbarTitle.setText(s);
+
+
     }
 
     @Override
@@ -100,8 +125,9 @@ public class MainActivity extends BaseActivity implements
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+
+        if (id == R.id.add_user_form) {
+            openActivity(UserFormActivity.class);//navigate to user form screen
             return true;
         }
 

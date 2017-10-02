@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <RelativeLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="80dp">
+    <!--<data>-->
+        <!--<variable-->
+            <!--name="obj"-->
+            <!--type="app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers.Datum"></variable>-->
+
+    <!--</data>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,7 +25,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ammar Hammani"
+            android:text="Uzair"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:id="@+id/username"
@@ -47,7 +54,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="#122345"
+                android:text="#1234343"
                 android:id="@+id/form_id"
                 android:layout_marginLeft="@dimen/normal_margin"
                 android:layout_marginRight="@dimen/normal_margin"
@@ -104,7 +111,7 @@
             >
         <TextView
             android:layout_width="0dp"
-            android:layout_height="@dimen/large_text_size"
+            android:layout_height="wrap_content"
             android:text="ETA"
             android:layout_alignParentRight="true"
             android:background="@color/colorPrimary"
@@ -112,13 +119,16 @@
             android:textColor="@color/white"
             android:layout_weight="0.7"
             android:layout_gravity="center"
+            android:id="@+id/canting"
 
             />
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_navigate_next"
                 android:layout_gravity="center"
+                android:layout_weight="0.2"
+                android:layout_marginLeft="@dimen/normal_margin"
 
 
                />

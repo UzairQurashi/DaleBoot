@@ -42,12 +42,12 @@ public class NavigationPagerAdapter extends FragmentPagerAdapter
         mFragmentTitleList.add(fragmenttittle);
     }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-
-        //return mFragmentTitleList.get(position);
-        return "";
-    }
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//
+//        return mFragmentTitleList.get(position);
+//        //return "";
+//    }
 
     /**
      * this method will set an tab icons

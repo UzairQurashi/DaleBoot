@@ -17,5 +17,9 @@
     <color name="black">#000000</color>
     <color name="grey">#C0C0C0</color>
     <color name="light_grey">#f1f1f1</color>
-    <color name="dark_grey">#acacac</color>
+    <color name="dark_grey">#696969</color>
+    <color name="bg_colorinput">#25AB89</color>
+    <color name="primaryred">#DC143C</color>
+    <!--006633-->
+
 </resources>

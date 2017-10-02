@@ -11,10 +11,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
+import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
 import app.dalboot.mobiavialdo.com.daleboot.adapters.FormAdapter;
+import app.dalboot.mobiavialdo.com.daleboot.adapters.NotificationAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentFormsBinding;
+import app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers;
+import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,17 +35,13 @@ import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentFormsBinding;
  * create an instance of this fragment.
  */
 public class FormsFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
     private FragmentFormsBinding formsBinding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
 
     private OnFragmentInteractionListener mListener;
+    private FormAdapter adapter;
 
     public FormsFragment() {
         // Required empty public constructor
@@ -53,8 +59,7 @@ public class FormsFragment extends Fragment {
     public static FormsFragment newInstance(String param1, String param2) {
         FormsFragment fragment = new FormsFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -63,8 +68,7 @@ public class FormsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -72,27 +76,38 @@ public class FormsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_forms, container, false);
         formsBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_forms,container,false);
         loadViews();
         return formsBinding.getRoot();
     }
 
     private void loadViews() {
-        initrecyclerview();
+       initrecyclerview();
+        getAllCustomers();
+
 
     }
 
+    /**
+     * this method will initialize recyclerview
+     * @param
+     */
     private void initrecyclerview() {
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         formsBinding.formRecylerview.setLayoutManager(mLayoutManager);
         formsBinding.formRecylerview.setItemAnimator(new DefaultItemAnimator());
-        setAdapter();
+
+    }
+    private void setAdapter(ArrayList<AllCustomers.Datum> data) {
+        FormAdapter adapter=new FormAdapter(this.getContext(),data);
+        formsBinding.formRecylerview.setAdapter(adapter);
+
     }
 
-    private void setAdapter() {
-        FormAdapter adapter=new FormAdapter(this.getContext());
-        formsBinding.formRecylerview.setAdapter(adapter);
+
+    private void populateRecyclerView(ArrayList<AllCustomers.Datum> cutomers){
+        adapter.swap(cutomers);
+
     }
 
 
@@ -103,9 +118,24 @@ public class FormsFragment extends Fragment {
             mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + " must implement OnAdditionalInfoInteractionListener");
         }
     }
+
+    /**
+     *
+     */
+private void getAllCustomers(){
+    RestClient.getAuthAdapter().getcustomers().enqueue(new GeneralCallBack<AllCustomers>(getContext()) {
+        @Override
+        public void onSuccess(AllCustomers response) {
+            if(response!=null) {
+                setAdapter(response.getData());
+            }
+
+        }
+    });
+}
 
     @Override
     public void onDetach() {

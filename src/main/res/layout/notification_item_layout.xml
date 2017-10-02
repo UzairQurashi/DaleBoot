@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="50dp"
@@ -17,11 +19,15 @@
             android:text="New incomming delivery"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:id="@+id/notification_msg"
+
+
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="order #1234 now in process"
+            android:id="@+id/order_id"
             />
     </LinearLayout>
     <TextView
@@ -31,6 +37,7 @@
         android:text="Just Now"
         android:textSize="@dimen/small_text_size"
         android:layout_gravity="center"
+        android:id="@+id/notification_time"
         />
     <View
         android:layout_width="match_parent"
@@ -41,3 +48,4 @@
         ></View>
 
 </RelativeLayout>
+</layout>

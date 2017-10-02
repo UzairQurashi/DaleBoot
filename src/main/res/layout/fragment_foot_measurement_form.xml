@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ls="http://schemas.android.com/apk/res-auto">
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/large_padding"
+    tools:context="app.dalboot.mobiavialdo.com.daleboot.forms.FootMeasurementForm">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/calf_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/v_small_text_size"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:id="@+id/calf_layout">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/left_calf"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/left_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/normal_margin"
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/right_calf"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/right_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ankle_hint"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/v_small_text_size"
+                    android:layout_marginTop="@dimen/normal_margin"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:id="@+id/ankle_layout">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/left_ankle"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/left_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/normal_margin"
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/right_ankle"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/right_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/foot_vol_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/v_small_text_size"
+                    android:layout_marginTop="@dimen/normal_margin"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:id="@+id/foot_vol_layout">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/left_foot_vol"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/left_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/normal_margin"
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/right_foot_vol"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/right_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/width_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/v_small_text_size"
+                    android:layout_marginTop="@dimen/normal_margin"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:id="@+id/width_layout">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/left_width"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/left_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/normal_margin"
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/right_width"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/right_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+                <com.farbod.labelledspinner.LabelledSpinner
+                    android:id="@+id/measurmnt_tool_spinner"
+                    ls:labelText="@string/measurement_tool_hint"
+                    ls:widgetColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    ls:entries="@color/dark_grey"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/size_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/v_small_text_size"
+                    android:layout_marginTop="@dimen/normal_margin"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:id="@+id/size_layout">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/left_size"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/left_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/normal_margin"
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/right_size"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/right_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/arch_length_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/v_small_text_size"
+                    android:layout_marginTop="@dimen/normal_margin"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:id="@+id/arch_length_layout">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/left_arch"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/left_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/normal_margin"
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/right_arch"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/right_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bootoptions"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    />
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+</RelativeLayout>
+</layout>

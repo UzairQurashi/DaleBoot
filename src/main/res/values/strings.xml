@@ -4,4 +4,50 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="firstname_hint">FIRST NAME*</string>
+    <string name="lastname_hint">LAST NAME*</string>
+    <string name="street_hint">STREET*</string>
+    <string name="occupation_hint">OCCUPATION*</string>
+    <string name="telephone_hint">TEL*</string>
+    <string name="city_hint">CITY*</string>
+    <string name="state_hint">STATE</string>
+    <string name="zipcode_hint">ZIPCODE</string>
+    <string name="email_hint">EMAIL*</string>
+    <string name="your_spinner_label">Select some thing new</string>
+    <string name="add_info_q_one"><b>HAVE YOU EVER EXPERIENCED ANKLE BONE DISCOMFORT*</b></string>
+    <string name="add_info_q_two">HAVE YOU EVER EXPERIENCED SHIN BANG*</string>
+    <string name="add_info_q_three">HAVE YOU EVER EXPERIENCED SHIN BANG</string>
+    <string name="add_info_q_four">ABILITY LEVEL*</string>
+    <string name="previousbrnd_hint">PREVIOUS BRANDS OF SKI BOOTS?</string>
+    <string name="add_info_q_five">ATTITUDE WHILE SKING?</string>
+    <string name="add_info_q_six">PREFFERED SKING CONDITIONS?</string>
+    <string name="weight_hint">WEIGHT</string>
+    <string name="height_hint">HEIGHT</string>
+    <string name="street_shoe_hint">STREET SHOE SIZE</string>
+    <string name="arch_height_label">ARCH HEIGHT</string>
+    <string name="heel_stance_hint">HEEL STANCE</string>
+    <string name="ankle_hint">ANKLE</string>
+    <string name="dor_suf_label">DORSUFLEXION</string>
+    <string name="exostosis_hint">EXOSTOSIS</string>
+    <string name="diff_lenght_legs_label">DIFFERRENT IN LEGS LENGTH</string>
+    <string name="left_leg_hint">L:\u0020\u0020\u0020cm</string>
+    <string name="right_leg_hint">R:\u0020\u0020\u0020 cm</string>
+    <string name="calf_label">CALF</string>
+    <string name="foot_vol_label">FOOT VOLUME</string>
+    <string name="width_label">WIDTH</string>
+    <string name="measurement_tool_hint">TOOL TO BE USED FOR MEASUREMENT BELOW</string>
+    <string name="size_label">SIZE</string>
+    <string name="arch_length_label">ARCH LENGTH</string>
+    <string name="model_selection_hint">MODEL SELECTION</string>
+    <string name="linner_size_hint">LINNER SIZE</string>
+    <string name="linner_type_hint">LINNER TYPE</string>
+    <string name="deposit_hint">DEPOSIT</string>
+    <string name="pickup_date_hint">PICKUP DATE</string>
+    <string name="amount_paid_hint">AMOUNT PAID</string>
+    <string name="invoice_number_hint">INVOICE NUMBER</string>
+    <string name="windlass_label">WINDLASS</string>
+    <string name="fore_foot_label">FOREFOOT</string>
+    <string name="rom_label">ROM</string>
+
+
 </resources>

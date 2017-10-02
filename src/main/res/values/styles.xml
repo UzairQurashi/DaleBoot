@@ -5,9 +5,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <!--<item name="colorAccent">@color/black</item>-->
         <item name="android:windowActionBarOverlay">false</item>
-
+<!---->
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -26,5 +26,23 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!--Custom Edittext theme-->
+    <style name="CustomEditTextStyle" parent="android:Widget.EditText">
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+        <!--<item name="android:color"></item>-->
+        <item name="android:backgroundTint">@color/bg_colorinput</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:drawableRight">@drawable/ic_tick_green</item>
+        <item name="android:drawablePadding">@dimen/normal_padding</item>
+        
+        <!-- ... More items here if needed ... -->
+    </style>
+    <style name="App_Theme" parent="App_Theme">
+        <item name="android:editTextStyle">@style/CustomEditTextStyle</item>
+        <item name="editTextStyle">@style/CustomEditTextStyle</item> <!-- For compatibility with the support library -->
+    </style>
+
 
 </resources>
