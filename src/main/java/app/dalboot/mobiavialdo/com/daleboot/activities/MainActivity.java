@@ -3,28 +3,16 @@ package app.dalboot.mobiavialdo.com.daleboot.activities;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
-import app.dalboot.mobiavialdo.com.daleboot.adapters.NavigationPagerAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.ActivityMainBinding;
 import app.dalboot.mobiavialdo.com.daleboot.fragments.FormsFragment;
 import app.dalboot.mobiavialdo.com.daleboot.fragments.NotificationsFragment;
-import app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers;
-import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
 import app.dalboot.mobiavialdo.com.daleboot.utils.NavigationUtils;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends BaseActivity implements
         FormsFragment.OnFragmentInteractionListener,
@@ -37,6 +25,7 @@ public class MainActivity extends BaseActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(MainActivity.this,R.layout.activity_main);
+        parentBinding=binding;
         loadViews();
 
 

@@ -8,9 +8,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentBootSpecificationFormBinding;
+import app.dalboot.mobiavialdo.com.daleboot.models.request.Customer;
+import app.dalboot.mobiavialdo.com.daleboot.utils.extras.EventMessage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,6 +56,7 @@ public class BootSpecificationForm extends FormsParentFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(BootSpecificationForm.this);
         if (getArguments() != null) {
 
         }
@@ -59,15 +67,19 @@ public class BootSpecificationForm extends FormsParentFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        viewbinding= DataBindingUtil.inflate(inflater,R.layout.fragment_boot_specification_form, container, false);
+        loadViews();
         return viewbinding.getRoot();
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+    private void loadViews() {
+        loadSpinners();
     }
+
+    private void loadSpinners() {
+        viewbinding.linnerTypeSpinner.setItemsArray(default_items);
+        viewbinding.modelSelectionSpinner.setItemsArray(default_items);
+    }
+
 
     @Override
     public void onAttach(Context context) {
@@ -98,6 +110,16 @@ public class BootSpecificationForm extends FormsParentFragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onBootSpecificationFormInteraction(String model_selection, String size, String linner_size, String linner_type);
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(EventMessage event) {
+        if(event.getPage() == 4) {
+            Customer.getInstance().setModel_selection((String) viewbinding.modelSelectionSpinner.getSpinner().getSelectedItem());
+            Customer.getInstance().setSize_select(viewbinding.size.getText().toString());
+            Customer.getInstance().setLiner_size(viewbinding.linnerSize.getText().toString());
+            Customer.getInstance().setLiner_type((String) viewbinding.linnerTypeSpinner.getSpinner().getSelectedItem());
+//
+        }
     }
 }

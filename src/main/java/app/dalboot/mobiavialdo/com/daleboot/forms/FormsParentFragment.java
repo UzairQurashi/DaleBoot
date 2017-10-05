@@ -18,6 +18,8 @@ public class FormsParentFragment extends Fragment {
     protected String[]exostosis_items=new String[]{"INSTEP BUMP","HALLUX VALGUS","TAILOR'S BUNION","PUMP BUMP","BUNION","MORTON'S FOOT","OTHER"};
     protected String[]forbed_items=new String[]{"YES","NO","OK","REBUILD"};
     protected String[]tools_measures_items=new String[]{"BRANNOCK","MONDO"};
+    protected String[]default_items=new String[]{"YES","NO"};
+
 
     /**
      * @usage This method cast the activity object with the desired object

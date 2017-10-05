@@ -2,15 +2,22 @@ package app.dalboot.mobiavialdo.com.daleboot.forms;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentCustomerInfoBinding;
+import app.dalboot.mobiavialdo.com.daleboot.models.request.Customer;
+import app.dalboot.mobiavialdo.com.daleboot.utils.ValidationUtility;
+import app.dalboot.mobiavialdo.com.daleboot.utils.extras.EventMessage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,7 +54,12 @@ public class CustomerInfoForm extends FormsParentFragment {
         return viewbinding.getRoot();
     }
 
-
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //getActualActivity(UserFormActivity.class).viewPager.
+        EventBus.getDefault().register(CustomerInfoForm.this);
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -60,7 +72,37 @@ public class CustomerInfoForm extends FormsParentFragment {
         }
     }
 
+     private boolean isValidate(){
+         if(!ValidationUtility.edittextValidator(viewbinding.firstname)){
+             return false;
+         }
+         else if (!ValidationUtility.edittextValidator(viewbinding.lastname)){
+             return false;
+         }
+         else if (!ValidationUtility.edittextValidator(viewbinding.street)){
+             return false;
+         }
+         else if(!ValidationUtility.edittextValidator(viewbinding.occupation)){
+             return false;
+         }
+         else if(!ValidationUtility.edittextValidator(viewbinding.telephone)){
+             return false;
+         }
+         else if(!ValidationUtility.edittextValidator(viewbinding.city)){
+             return false;
+         }
+         else if(!ValidationUtility.edittextValidator(viewbinding.state)){
+             return false;
+         }
+         else if(!ValidationUtility.edittextValidator(viewbinding.zipcode)){
+             return false;
+         }
+         else if(!ValidationUtility.edittextValidator(viewbinding.email)){
+             return false;
+         }
 
+          return true;
+     }
 
     /**
      * This interface must be implemented by activities that contain this
@@ -74,6 +116,30 @@ public class CustomerInfoForm extends FormsParentFragment {
      */
     public interface OnCustomerInfoInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onCustomerInfoInteraction(String f_name, String l_name , String c_street, String c_occupation, String c_tel, String c_city, String c_state, String c_zipcode, String c_email);
     }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(EventMessage event) {
+        if(event.getPage()==0){
+
+            // if(isValidate()){
+                 Customer.getInstance().setFirst_name(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setLast_name(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setStreet(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setOccupation(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setTel(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setZip_code(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setState(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setCity(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setEmail(viewbinding.firstname.getText().toString());
+
+
+
+//             }
+
+
+        }
+
+    }
+
 }

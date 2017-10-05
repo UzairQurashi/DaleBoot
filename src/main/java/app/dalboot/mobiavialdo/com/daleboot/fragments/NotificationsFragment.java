@@ -11,21 +11,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
-import app.dalboot.mobiavialdo.com.daleboot.adapters.FormAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.adapters.NotificationAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentNotificationsBinding;
-import app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers;
-import app.dalboot.mobiavialdo.com.daleboot.models.Notifications;
+import app.dalboot.mobiavialdo.com.daleboot.forms.FormsParentFragment;
+import app.dalboot.mobiavialdo.com.daleboot.models.response.Notifications;
 import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,7 +30,7 @@ import retrofit2.Response;
  * Use the {@link NotificationsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NotificationsFragment extends Fragment {
+public class NotificationsFragment extends FormsParentFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -125,9 +120,12 @@ public class NotificationsFragment extends Fragment {
         mListener = null;
     }
     private void getNotifications(){
+        //getActualActivity(MainActivity.class).showProgress();
         RestClient.getAuthAdapter().getNotifications().enqueue(new GeneralCallBack<Notifications>(getContext()) {
             @Override
             public void onSuccess(Notifications response) {
+                //getActualActivity(BaseActivity.class).hideProgress();
+
                 setAdapter(response.getData());
             }
         });

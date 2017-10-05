@@ -1,4 +1,4 @@
-package app.dalboot.mobiavialdo.com.daleboot.models;
+package app.dalboot.mobiavialdo.com.daleboot.models.response;
 
 import java.util.ArrayList;
 

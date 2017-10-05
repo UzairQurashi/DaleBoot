@@ -4,14 +4,13 @@ import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.NotificationItemLayoutBinding;
-import app.dalboot.mobiavialdo.com.daleboot.models.Notifications;
+import app.dalboot.mobiavialdo.com.daleboot.models.response.Notifications;
 import app.dalboot.mobiavialdo.com.daleboot.viewholders.NotificationViewHolder;
 
 /**

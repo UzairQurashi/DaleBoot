@@ -48,6 +48,10 @@
     <string name="windlass_label">WINDLASS</string>
     <string name="fore_foot_label">FOREFOOT</string>
     <string name="rom_label">ROM</string>
+    <string name="cant_wand_label">CANT WAND</string>
+    <string name="daleboot_canted_label">DALEBOOT CANTED SOLE</string>
+    <string name="degree_after_cant_label">DEGREE AFTER CANT</string>
+    <string name="notes">NOTES</string>
 
 
 </resources>

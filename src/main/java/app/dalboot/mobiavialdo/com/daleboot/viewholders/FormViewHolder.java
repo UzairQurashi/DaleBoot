@@ -1,12 +1,13 @@
 package app.dalboot.mobiavialdo.com.daleboot.viewholders;
 
-import android.databinding.ViewDataBinding;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
+import app.dalboot.mobiavialdo.com.daleboot.activities.CantingInfoActivity;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FormItemLayoutBinding;
-import app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers;
+import app.dalboot.mobiavialdo.com.daleboot.models.response.AllCustomers;
 
 /**
  * Author: Uzair Qureshi
@@ -32,9 +33,18 @@ public class FormViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    private void setCanting(AllCustomers.Datum customer) {
+    private void setCanting(final AllCustomers.Datum customer) {
         if (Integer.parseInt(customer.getCantingcount())==0){
             binding.canting.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.primaryred));
+            binding.canting.setText(customer.getPick_date());
+            binding.addCanting.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(v.getContext(), CantingInfoActivity.class);
+                    intent.putExtra("order_id",customer.getOrder_id());
+                    v.getContext().startActivity(new Intent(intent));
+                }
+            });
 
         }
         else if(Integer.parseInt(customer.getCantingcount())==1){

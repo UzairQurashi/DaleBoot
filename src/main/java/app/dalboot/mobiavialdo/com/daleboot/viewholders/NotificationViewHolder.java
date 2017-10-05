@@ -1,10 +1,9 @@
 package app.dalboot.mobiavialdo.com.daleboot.viewholders;
 
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import app.dalboot.mobiavialdo.com.daleboot.databinding.NotificationItemLayoutBinding;
-import app.dalboot.mobiavialdo.com.daleboot.models.Notifications;
+import app.dalboot.mobiavialdo.com.daleboot.models.response.Notifications;
 
 /**
  * Author: Uzair Qureshi
@@ -23,6 +22,7 @@ public class NotificationViewHolder extends RecyclerView.ViewHolder {
     public void bindData(Notifications.Datum notificatoins){
         itemLayoutBinding.notificationMsg.setText(notificatoins.getMessage());
         itemLayoutBinding.orderId.setText("Order #"+" "+notificatoins.getOrder_id() +" " +"is in progress");
+        //itemLayoutBinding.notificationTime.setText(notificatoins.getTime_stamp());
         //itemLayoutBinding.notificationTime.setText(notificatoins.getTime_stamp());
 
     }

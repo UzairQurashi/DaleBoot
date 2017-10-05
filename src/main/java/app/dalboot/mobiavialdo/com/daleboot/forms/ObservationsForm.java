@@ -9,8 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentObservationsBinding;
+import app.dalboot.mobiavialdo.com.daleboot.models.request.Customer;
+import app.dalboot.mobiavialdo.com.daleboot.utils.extras.EventMessage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,6 +55,7 @@ public class ObservationsForm extends FormsParentFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(ObservationsForm.this);
         if (getArguments() != null) {
         }
     }
@@ -107,6 +114,27 @@ public class ObservationsForm extends FormsParentFragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onObservationFormInteraction(String arch_height, String heel_stance, String ankle, String dufluxion, String exostosis, String diff_in_legs_length, String footbed,
+                                          String widlass, String forefoot, String rom);
     }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(EventMessage event) {
+        if(event.getPage()==2){
+            Customer.getInstance().setArch_height(String.valueOf(5));
+            Customer.getInstance().setHeel_stance((String) viewbinding.heelStancespinner.getSpinner().getSelectedItem());
+            Customer.getInstance().setAnkle_select((String) viewbinding.ankleSpinner.getSpinner().getSelectedItem());
+            Customer.getInstance().setDoorflexion( String.valueOf(5));
+            Customer.getInstance().setExostosis((String) viewbinding.exostosisSpinner.getSpinner().getSelectedItem());
+            Customer.getInstance().setDifference_leg_length(viewbinding.leftLeg.getText().toString()+"-"+viewbinding.rightLeg.getText().toString()+"cm");
+            Customer.getInstance().setWindlass(viewbinding.leftWindlass.getText().toString()+"-"+viewbinding.rightWindLass.getText().toString()+"cm");
+            Customer.getInstance().setRom(viewbinding.leftRom.getText().toString()+"-"+viewbinding.rightRom.getText().toString()+"cm");
+            Customer.getInstance().setFoot_bed(viewbinding.leftForefoot.getText().toString()+"-"+viewbinding.rightForefoot.getText().toString()+"cm");
+            Customer.getInstance().setForefoot(viewbinding.leftForefoot.getText().toString()+"-"+viewbinding.rightForefoot.getText().toString()+"cm");
+
+
+        }
+
+
+    }
+
 }

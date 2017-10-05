@@ -8,7 +8,7 @@
     <!--<data>-->
         <!--<variable-->
             <!--name="obj"-->
-            <!--type="app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers.Datum"></variable>-->
+            <!--type="app.dalboot.mobiavialdo.com.daleboot.models.response.AllCustomers.Datum"></variable>-->
 
     <!--</data>-->
     <LinearLayout
@@ -110,7 +110,7 @@
             android:weightSum="1"
             >
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ETA"
             android:layout_alignParentRight="true"
@@ -129,6 +129,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="0.2"
                 android:layout_marginLeft="@dimen/normal_margin"
+                android:id="@+id/add_canting"
 
 
                />

@@ -8,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import org.greenrobot.eventbus.EventBus;
+
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.ActivityUserFormBinding;
 import app.dalboot.mobiavialdo.com.daleboot.forms.AdditionalInfoForm;
@@ -17,6 +19,7 @@ import app.dalboot.mobiavialdo.com.daleboot.forms.FootMeasurementForm;
 import app.dalboot.mobiavialdo.com.daleboot.forms.ObservationsForm;
 import app.dalboot.mobiavialdo.com.daleboot.forms.RecieptForm;
 import app.dalboot.mobiavialdo.com.daleboot.utils.NavigationUtils;
+import app.dalboot.mobiavialdo.com.daleboot.utils.extras.EventMessage;
 
 public class UserFormActivity extends BaseActivity implements
         AdditionalInfoForm.OnAdditionalInfoInteractionListener,
@@ -28,10 +31,12 @@ public class UserFormActivity extends BaseActivity implements
 
 
     private ActivityUserFormBinding binding;
+    public ViewPager viewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= DataBindingUtil.setContentView(UserFormActivity.this,R.layout.activity_user_form);
+        parentBinding=binding;
         loadViews();
 
     }
@@ -50,7 +55,9 @@ public class UserFormActivity extends BaseActivity implements
     }
 
     private void initFormPager() {
+        viewPager=binding.formpager;
         binding.formpager.setAdapter(NavigationUtils.getPagerAdapter(this,getSupportFragmentManager()));
+        binding.formpager.setOffscreenPageLimit(5);
 
     }
     /**
@@ -97,7 +104,9 @@ public class UserFormActivity extends BaseActivity implements
     private void navigatePage(boolean isforward) {
         if (isforward) {//executes untill when current page is not the last page
             if (binding.formpager.getCurrentItem() < 6) {
+                EventBus.getDefault().post(new EventMessage(binding.formpager.getCurrentItem()));
                 binding.formpager.setCurrentItem(binding.formpager.getCurrentItem() + 1);
+
             }
         } else {//executes untill when current page is the first page
             if (binding.formpager.getCurrentItem() > 0) {
@@ -107,10 +116,6 @@ public class UserFormActivity extends BaseActivity implements
         }
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -137,7 +142,9 @@ public class UserFormActivity extends BaseActivity implements
     }
 
 
-//=============================================== Inner Classess =================================================//
+
+
+    //=============================================== Inner Classess =================================================//
     private class OnPageListner implements ViewPager.OnPageChangeListener {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -147,6 +154,7 @@ public class UserFormActivity extends BaseActivity implements
         @Override
         public void onPageSelected(int position) {
             setToolbarTittle(position);
+            //EventBus.getDefault().post(new EventMessage(position));
 
         }
 
@@ -167,4 +175,31 @@ public class UserFormActivity extends BaseActivity implements
             }
         }
     }
+//================================================== Fragments Interactions Implemented Methods ===========================================//
+    @Override
+    public void onCustomerInfoInteraction(String f_name, String l_name, String c_street, String c_occupation, String c_tel, String c_city, String c_state, String c_zipcode, String c_email) {
+
+    }
+    @Override
+    public void onAdditionalInfoInteraction(String bone_discomfort, String shing_bang, String your_feets, String ski_boots, String ability_level, String atttitude_skii, String preferd_sking_conditions, String height, String weight, String street_shoe_size) {
+
+    }
+    @Override
+    public void onObservationFormInteraction(String arch_height, String heel_stance, String ankle, String dufluxion, String exostosis, String diff_in_legs_length, String footbed, String widlass, String forefoot, String rom) {
+
+    }
+    @Override
+    public void onFootMeasurmentFormInteraction(String calf, String ankle, String foot_volume, String width, String tools_measurements, String size, String arch_length) {
+
+    }
+
+    @Override
+    public void onBootSpecificationFormInteraction(String model_selection, String size, String linner_size, String linner_type) {
+
+    }
+    @Override
+    public void onRecieptFormInteraction(String deposit, String pickup_date, String amount_paid, String invoice_number) {
+
+    }
+
 }

@@ -9,8 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentFootMeasurementFormBinding;
+import app.dalboot.mobiavialdo.com.daleboot.models.request.Customer;
+import app.dalboot.mobiavialdo.com.daleboot.utils.extras.EventMessage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,6 +56,7 @@ public class FootMeasurementForm extends FormsParentFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(FootMeasurementForm.this);
         if (getArguments() != null) {
         }
     }
@@ -104,6 +111,21 @@ public class FootMeasurementForm extends FormsParentFragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onFootMeasurmentFormInteraction(String calf, String ankle, String foot_volume, String width, String tools_measurements, String size, String arch_length);
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(EventMessage event) {
+        if(event.getPage()==3){
+            Customer.getInstance().setCalf(viewbinding.leftCalf.getText().toString()+"-"+viewbinding.rightCalf.getText().toString()+"cm");
+            Customer.getInstance().setAnkle((viewbinding.leftAnkle.getText().toString()+"-"+viewbinding.rightAnkle.getText().toString()+"cm"));
+            Customer.getInstance().setFoot_volue((viewbinding.leftFootVol.getText().toString()+"-"+viewbinding.rightFootVol.getText().toString()+"cm"));
+            Customer.getInstance().setWidth((viewbinding.leftWidth.getText().toString()+"-"+viewbinding.rightWidth.getText().toString()+"cm"));
+            Customer.getInstance().setMeasurement_below((String) viewbinding.measurmntToolSpinner.getSpinner().getSelectedItem());
+            Customer.getInstance().setArch_length(viewbinding.leftArch.getText().toString()+"-"+viewbinding.rightArch.getText().toString()+"cm");
+            Customer.getInstance().setSize(viewbinding.leftSize.getText().toString()+"-"+viewbinding.rightSize.getText().toString()+"cm");
+
+
+        }
+
     }
 }

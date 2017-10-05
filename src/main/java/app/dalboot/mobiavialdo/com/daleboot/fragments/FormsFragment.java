@@ -11,20 +11,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
+import app.dalboot.mobiavialdo.com.daleboot.activities.BaseActivity;
 import app.dalboot.mobiavialdo.com.daleboot.adapters.FormAdapter;
-import app.dalboot.mobiavialdo.com.daleboot.adapters.NotificationAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentFormsBinding;
-import app.dalboot.mobiavialdo.com.daleboot.models.AllCustomers;
+import app.dalboot.mobiavialdo.com.daleboot.forms.FormsParentFragment;
+import app.dalboot.mobiavialdo.com.daleboot.models.response.AllCustomers;
 import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,7 +31,7 @@ import retrofit2.Response;
  * Use the {@link FormsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FormsFragment extends Fragment {
+public class FormsFragment extends FormsParentFragment {
 
     private FragmentFormsBinding formsBinding;
 
@@ -126,10 +123,12 @@ public class FormsFragment extends Fragment {
      *
      */
 private void getAllCustomers(){
+    getActualActivity(BaseActivity.class).showProgress();
     RestClient.getAuthAdapter().getcustomers().enqueue(new GeneralCallBack<AllCustomers>(getContext()) {
         @Override
         public void onSuccess(AllCustomers response) {
             if(response!=null) {
+                getActualActivity(BaseActivity.class).hideProgress();
                 setAdapter(response.getData());
             }
 
