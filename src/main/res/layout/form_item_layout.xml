@@ -108,31 +108,31 @@
             android:layout_weight="0.5"
             android:orientation="horizontal"
             android:weightSum="1"
+            android:gravity="center"
             >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="ETA"
-            android:layout_alignParentRight="true"
-            android:background="@color/colorPrimary"
+            android:text="27-11-17"
+
+            android:background="@drawable/small_rounded_view"
             android:gravity="center"
             android:textColor="@color/white"
             android:layout_weight="0.7"
             android:layout_gravity="center"
             android:id="@+id/canting"
+            android:layout_marginRight="@dimen/normal_margin"
 
             />
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_navigate_next"
-                android:layout_gravity="center"
                 android:layout_weight="0.2"
-                android:layout_marginLeft="@dimen/normal_margin"
+
+
                 android:id="@+id/add_canting"
-
-
-               />
+                />
         </LinearLayout>
 
     </LinearLayout>

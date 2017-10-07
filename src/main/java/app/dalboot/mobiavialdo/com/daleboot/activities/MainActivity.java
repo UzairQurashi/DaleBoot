@@ -10,12 +10,12 @@ import android.view.MenuItem;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.ActivityMainBinding;
-import app.dalboot.mobiavialdo.com.daleboot.fragments.FormsFragment;
+import app.dalboot.mobiavialdo.com.daleboot.fragments.AllUsersFragment;
 import app.dalboot.mobiavialdo.com.daleboot.fragments.NotificationsFragment;
 import app.dalboot.mobiavialdo.com.daleboot.utils.NavigationUtils;
 
 public class MainActivity extends BaseActivity implements
-        FormsFragment.OnFragmentInteractionListener,
+        AllUsersFragment.OnFragmentInteractionListener,
         NotificationsFragment.OnFragmentInteractionListener{
     private ActivityMainBinding binding;
     private int[]tabicons=new int[]{R.drawable.form_tabs,R.drawable.notifications_tabs};
@@ -38,6 +38,7 @@ public class MainActivity extends BaseActivity implements
      */
     private void loadViews() {
         setSupportActionBar(binding.appbar.toolbar);
+        binding.appbar.toolbar.setNavigationIcon(null);
         setTittle("Forms");
         setViewPager();
         setEventsListners();
@@ -117,6 +118,8 @@ public class MainActivity extends BaseActivity implements
 
         if (id == R.id.add_user_form) {
             openActivity(UserFormActivity.class);//navigate to user form screen
+            // openActivity(SuccessActivty.class);//navigate to user form screen
+
             return true;
         }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ls="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <RelativeLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,40 +16,40 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:orientation="vertical">
-           <com.farbod.labelledspinner.LabelledSpinner
+           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                android:id="@+id/add_info_q_one_spinner"
-               ls:labelText="@string/add_info_q_one"
-               ls:widgetColor="@color/black"
+               app:labelText="@string/add_info_q_one"
+               app:widgetColor="@color/black"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-
-
-
-              />
-           <com.farbod.labelledspinner.LabelledSpinner
+               android:layout_marginTop="@dimen/normal_margin"
+               />
+           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                android:id="@+id/add_info_q_two_spinner"
-               ls:labelText="@string/add_info_q_two"
-               ls:widgetColor="@color/black"
+               app:labelText="@string/add_info_q_two"
+               app:widgetColor="@color/black"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:layout_marginTop="@dimen/above_normal_margin"
 
 
                />
-           <com.farbod.labelledspinner.LabelledSpinner
+           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                android:id="@+id/add_info_q_threespinner"
-               ls:labelText="@string/add_info_q_three"
-               ls:widgetColor="@color/black"
+               app:labelText="@string/add_info_q_three"
+               app:widgetColor="@color/black"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               ls:entries="@color/dark_grey"
+               entries="@color/dark_grey"
+               android:layout_marginTop="@dimen/above_normal_margin"
+
 
 
                />
            <android.support.design.widget.TextInputLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/small_margin"
-               >
+               android:layout_marginTop="@dimen/above_normal_margin"               >
 
            <EditText
                android:id="@+id/skiboots"
@@ -62,33 +62,36 @@
 
                />
        </android.support.design.widget.TextInputLayout>
-           <com.farbod.labelledspinner.LabelledSpinner
+           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                android:id="@+id/add_info_q_four_spinner"
-               ls:labelText="@string/add_info_q_four"
-               ls:widgetColor="@color/black"
+              app:labelText="@string/add_info_q_four"
+               app:widgetColor="@color/black"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               ls:entries="@color/dark_grey"
-
+               entries="@color/dark_grey"
+               android:layout_marginTop="@dimen/above_normal_margin"
 
                />
-           <com.farbod.labelledspinner.LabelledSpinner
+           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                android:id="@+id/add_info_q_five_spinner"
-               ls:labelText="@string/add_info_q_five"
-               ls:widgetColor="@color/black"
+               app:labelText="@string/add_info_q_five"
+               app:widgetColor="@color/black"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               ls:entries="@color/dark_grey"
+               entries="@color/dark_grey"
+               android:layout_marginTop="@dimen/above_normal_margin"
+
 
 
                />
-           <com.farbod.labelledspinner.LabelledSpinner
+           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                android:id="@+id/add_info_q_six_spinner"
-               ls:labelText="@string/add_info_q_six"
-               ls:widgetColor="@color/black"
+              app:labelText="@string/add_info_q_six"
+               app:widgetColor="@color/black"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               ls:entries="@color/dark_grey"
+               entries="@color/dark_grey"
+               android:layout_marginTop="@dimen/above_normal_margin"
 
 
                />
@@ -96,8 +99,7 @@
            <android.support.design.widget.TextInputLayout
                android:layout_width="200dp"
                android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/small_margin"
-               >
+               android:layout_marginTop="@dimen/above_normal_margin"               >
 
            <EditText
                android:id="@+id/height"
@@ -115,8 +117,7 @@
            <android.support.design.widget.TextInputLayout
                android:layout_width="200dp"
                android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/small_margin"
-               >
+               android:layout_marginTop="@dimen/above_normal_margin"               >
 
                <EditText
                    android:id="@+id/weight"
@@ -132,8 +133,7 @@
            <android.support.design.widget.TextInputLayout
                android:layout_width="200dp"
                android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/small_margin"
-               >
+               android:layout_marginTop="@dimen/above_normal_margin"               >
 
                <EditText
                    android:id="@+id/street_shoe_size"

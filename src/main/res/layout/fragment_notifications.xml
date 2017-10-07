@@ -4,6 +4,7 @@
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/small_padding"
     tools:context="app.dalboot.mobiavialdo.com.daleboot.fragments.NotificationsFragment">
 
     <!-- TODO: Update blank fragment layout -->

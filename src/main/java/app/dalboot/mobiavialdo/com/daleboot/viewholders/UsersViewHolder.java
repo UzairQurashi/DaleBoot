@@ -15,28 +15,39 @@ import app.dalboot.mobiavialdo.com.daleboot.models.response.AllCustomers;
  * Description:
  */
 
-public class FormViewHolder extends RecyclerView.ViewHolder {
+public class UsersViewHolder extends RecyclerView.ViewHolder {
     public FormItemLayoutBinding binding;
 
-    public FormViewHolder( FormItemLayoutBinding binding) {
+    public UsersViewHolder(FormItemLayoutBinding binding) {
         super(binding.getRoot());
         this.binding = binding;
     }
 
-
+    /**
+     * this method will binds data
+     * @param customer
+     */
     public void bindData(AllCustomers.Datum customer){
         binding.username.setText(customer.getFirst_name()+" " +customer.getLast_name());
         binding.formId.setText(customer.getInvoice_number());
         binding.salesman.setText(customer.getSaleman_name());
         binding.bootType.setText(customer.getModel_selection());
+        binding.canting.setText(customer.getPick_date());
+
         setCanting(customer);
 
     }
 
+    /**
+     * this method will take action according to canting value
+     * @param customer
+     */
     private void setCanting(final AllCustomers.Datum customer) {
         if (Integer.parseInt(customer.getCantingcount())==0){
+            binding.addCanting.setEnabled(true);
+
             binding.canting.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.primaryred));
-            binding.canting.setText(customer.getPick_date());
+            //binding.canting.setText(customer.getPick_date());
             binding.addCanting.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -49,6 +60,7 @@ public class FormViewHolder extends RecyclerView.ViewHolder {
         }
         else if(Integer.parseInt(customer.getCantingcount())==1){
             binding.canting.setBackgroundColor(binding.getRoot().getResources().getColor(R.color.primary_green));
+            binding.addCanting.setEnabled(false);
 
 
         }

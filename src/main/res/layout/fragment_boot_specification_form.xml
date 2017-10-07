@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ls="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <RelativeLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,21 +16,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <com.farbod.labelledspinner.LabelledSpinner
+            <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                 android:id="@+id/model_selection_spinner"
-                ls:labelText="@string/model_selection_hint"
-                ls:widgetColor="@color/black"
+                app:labelText="@string/model_selection_hint"
+                app:widgetColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                ls:entries="@color/dark_grey"
+                app:entries="@color/dark_grey"
+                android:layout_marginTop="@dimen/normal_margin"
 
                 />
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="@dimen/small_margin"
-
+                android:layout_marginTop="@dimen/above_normal_margin"
 
 
                 >
@@ -50,8 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginTop="@dimen/small_margin"
-
+                android:layout_marginTop="@dimen/above_normal_margin"
 
 
                 >
@@ -68,13 +67,14 @@
                     />
             </android.support.design.widget.TextInputLayout>
 
-            <com.farbod.labelledspinner.LabelledSpinner
+            <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                 android:id="@+id/linner_type_spinner"
-                ls:labelText="@string/linner_type_hint"
-                ls:widgetColor="@color/black"
+                app:labelText="@string/linner_type_hint"
+                app:widgetColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                ls:entries="@color/dark_grey"
+                app:entries="@color/dark_grey"
+                android:layout_marginTop="@dimen/above_normal_margin"
 
                 />
         </LinearLayout>

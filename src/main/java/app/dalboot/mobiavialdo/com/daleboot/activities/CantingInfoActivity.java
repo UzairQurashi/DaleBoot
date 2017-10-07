@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
@@ -26,8 +27,21 @@ public class CantingInfoActivity extends BaseActivity {
 
     private void loadViews() {
         getIntentData();
+        initToolbar();
+
+
+    }
+
+    private void initToolbar() {
         setSupportActionBar(binding.toolbar.toolbar);
         binding.toolbar.mainToolbarTitle.setText("Canting Information\n(Boot Tech Use Only)");
+        binding.toolbar.toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
 
 
     }
@@ -51,7 +65,7 @@ public class CantingInfoActivity extends BaseActivity {
             public void onSuccess(GeneralResponse response) {
                 hideProgress();
                 showMessage(response.getDeveloper_message());
-                openActivityWithFinish(MainActivity.class);
+                openActivityWithFinish(SuccessActivty.class);
 
             }
         });

@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -32,6 +33,7 @@ public class ObservationsForm extends FormsParentFragment {
 
     private OnFragmentInteractionListener mListener;
     private FragmentObservationsBinding viewbinding;
+    private int arch_height_seekbar_value,dorsifloxion_seekbar_value=1;
 
     public ObservationsForm() {
         // Required empty public constructor
@@ -71,6 +73,12 @@ public class ObservationsForm extends FormsParentFragment {
 //============================================== Helper Methods ========================================================//
     private void loadViews() {
         loadSpinners();
+        setListners();
+    }
+
+    private void setListners() {
+        viewbinding.archHeightSeekbar.setOnSeekBarChangeListener(new OnSeekBarProgressListner(viewbinding.archHeightSeekbar));
+        viewbinding.dorsifloxionSeekbar.setOnSeekBarChangeListener(new OnSeekBarProgressListner(viewbinding.dorsifloxionSeekbar));
     }
 
     /**
@@ -120,10 +128,10 @@ public class ObservationsForm extends FormsParentFragment {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(EventMessage event) {
         if(event.getPage()==2){
-            Customer.getInstance().setArch_height(String.valueOf(5));
+            Customer.getInstance().setArch_height(String.valueOf(arch_height_seekbar_value+"ft"));
             Customer.getInstance().setHeel_stance((String) viewbinding.heelStancespinner.getSpinner().getSelectedItem());
             Customer.getInstance().setAnkle_select((String) viewbinding.ankleSpinner.getSpinner().getSelectedItem());
-            Customer.getInstance().setDoorflexion( String.valueOf(5));
+            Customer.getInstance().setDoorflexion( String.valueOf(dorsifloxion_seekbar_value+"ft"));
             Customer.getInstance().setExostosis((String) viewbinding.exostosisSpinner.getSpinner().getSelectedItem());
             Customer.getInstance().setDifference_leg_length(viewbinding.leftLeg.getText().toString()+"-"+viewbinding.rightLeg.getText().toString()+"cm");
             Customer.getInstance().setWindlass(viewbinding.leftWindlass.getText().toString()+"-"+viewbinding.rightWindLass.getText().toString()+"cm");
@@ -137,4 +145,35 @@ public class ObservationsForm extends FormsParentFragment {
 
     }
 
+    private class OnSeekBarProgressListner implements SeekBar.OnSeekBarChangeListener {
+        private View view;
+        public OnSeekBarProgressListner(View view) {
+            this.view=view;
+
+        }
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            switch (view.getId()){
+                case  R.id.arch_height_seekbar:
+                    arch_height_seekbar_value= seekBar.getProgress();
+                    break;
+
+                case  R.id.dorsifloxion_seekbar:
+                   dorsifloxion_seekbar_value= seekBar.getProgress();
+                    break;
+            }
+
+        }
+    }
 }

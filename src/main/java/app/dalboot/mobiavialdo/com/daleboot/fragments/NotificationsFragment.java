@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
+import app.dalboot.mobiavialdo.com.daleboot.activities.MainActivity;
 import app.dalboot.mobiavialdo.com.daleboot.adapters.NotificationAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentNotificationsBinding;
 import app.dalboot.mobiavialdo.com.daleboot.forms.FormsParentFragment;
@@ -121,7 +122,7 @@ public class NotificationsFragment extends FormsParentFragment {
     }
     private void getNotifications(){
         //getActualActivity(MainActivity.class).showProgress();
-        RestClient.getAuthAdapter().getNotifications().enqueue(new GeneralCallBack<Notifications>(getContext()) {
+        RestClient.getAuthAdapter().getNotifications().enqueue(new GeneralCallBack<Notifications>(getActualActivity(MainActivity.class)) {
             @Override
             public void onSuccess(Notifications response) {
                 //getActualActivity(BaseActivity.class).hideProgress();

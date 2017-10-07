@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
 import app.dalboot.mobiavialdo.com.daleboot.activities.BaseActivity;
-import app.dalboot.mobiavialdo.com.daleboot.adapters.FormAdapter;
+import app.dalboot.mobiavialdo.com.daleboot.activities.MainActivity;
+import app.dalboot.mobiavialdo.com.daleboot.adapters.AllUsersAdapter;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentFormsBinding;
 import app.dalboot.mobiavialdo.com.daleboot.forms.FormsParentFragment;
 import app.dalboot.mobiavialdo.com.daleboot.models.response.AllCustomers;
@@ -26,21 +27,21 @@ import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link FormsFragment.OnFragmentInteractionListener} interface
+ * {@link AllUsersFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link FormsFragment#newInstance} factory method to
+ * Use the {@link AllUsersFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FormsFragment extends FormsParentFragment {
+public class AllUsersFragment extends FormsParentFragment {
 
     private FragmentFormsBinding formsBinding;
 
 
 
     private OnFragmentInteractionListener mListener;
-    private FormAdapter adapter;
+    private AllUsersAdapter adapter;
 
-    public FormsFragment() {
+    public AllUsersFragment() {
         // Required empty public constructor
     }
 
@@ -50,11 +51,11 @@ public class FormsFragment extends FormsParentFragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FormsFragment.
+     * @return A new instance of fragment AllUsersFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FormsFragment newInstance(String param1, String param2) {
-        FormsFragment fragment = new FormsFragment();
+    public static AllUsersFragment newInstance(String param1, String param2) {
+        AllUsersFragment fragment = new AllUsersFragment();
         Bundle args = new Bundle();
 
         fragment.setArguments(args);
@@ -96,7 +97,7 @@ public class FormsFragment extends FormsParentFragment {
 
     }
     private void setAdapter(ArrayList<AllCustomers.Datum> data) {
-        FormAdapter adapter=new FormAdapter(this.getContext(),data);
+        AllUsersAdapter adapter=new AllUsersAdapter(this.getContext(),data);
         formsBinding.formRecylerview.setAdapter(adapter);
 
     }
@@ -124,7 +125,7 @@ public class FormsFragment extends FormsParentFragment {
      */
 private void getAllCustomers(){
     getActualActivity(BaseActivity.class).showProgress();
-    RestClient.getAuthAdapter().getcustomers().enqueue(new GeneralCallBack<AllCustomers>(getContext()) {
+    RestClient.getAuthAdapter().getcustomers().enqueue(new GeneralCallBack<AllCustomers>(getActualActivity(MainActivity.class)) {
         @Override
         public void onSuccess(AllCustomers response) {
             if(response!=null) {

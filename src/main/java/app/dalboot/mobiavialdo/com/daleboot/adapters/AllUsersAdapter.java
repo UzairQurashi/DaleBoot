@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FormItemLayoutBinding;
 import app.dalboot.mobiavialdo.com.daleboot.models.response.AllCustomers;
-import app.dalboot.mobiavialdo.com.daleboot.viewholders.FormViewHolder;
+import app.dalboot.mobiavialdo.com.daleboot.viewholders.UsersViewHolder;
 
 /**
  * Author: Uzair Qureshi
@@ -19,12 +19,12 @@ import app.dalboot.mobiavialdo.com.daleboot.viewholders.FormViewHolder;
  * Description:
  */
 
-public class FormAdapter extends RecyclerView.Adapter<FormViewHolder> {
+public class AllUsersAdapter extends RecyclerView.Adapter<UsersViewHolder> {
     private Context mContext;
     private ArrayList<AllCustomers.Datum> customers;
 
 
-    public FormAdapter(Context mContext, ArrayList<AllCustomers.Datum> customers) {
+    public AllUsersAdapter(Context mContext, ArrayList<AllCustomers.Datum> customers) {
         this.mContext = mContext;
         this.customers = customers;
     }
@@ -34,16 +34,16 @@ public class FormAdapter extends RecyclerView.Adapter<FormViewHolder> {
 
 
     @Override
-    public FormViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public UsersViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.form_item_layout,parent,false);
         FormItemLayoutBinding itemBinding= DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.form_item_layout,parent,false);
-        return new FormViewHolder(itemBinding);
+        return new UsersViewHolder(itemBinding);
     }
 
     @Override
-    public void onBindViewHolder(FormViewHolder holder, int position) {
+    public void onBindViewHolder(UsersViewHolder holder, int position) {
 
-        ( (FormViewHolder)holder).bindData(customers.get(position));
+        ( (UsersViewHolder)holder).bindData(customers.get(position));
 
 
 

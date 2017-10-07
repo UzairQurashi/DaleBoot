@@ -73,17 +73,17 @@ public class UserFormActivity extends BaseActivity implements
                 setTittle("Additional Information");
                 break;
             case 2:
-                setTittle("ObservationsForm\n[Boots tech use only]");
+                setTittle("Observations\n(Boot Tech Use Only)");
                 break;
             case 3:
-                setTittle("Foot Measurements\n(Boots tech use only)");
+                setTittle("Foot Measurements\n(Boot Tech Use Only)");
                 break;
             case 4:
-                setTittle("Boot Specifications\n(Boots tech use only)");
+                setTittle("Boot Specifications\n(Boot Tech Use Only)");
                 break;
 
             case 5:
-                setTittle("Reciept\n(Boots tech use only)");
+                setTittle("Receipt\n(Boot Tech Use Only)");
                 break;
 
             default:

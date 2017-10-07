@@ -5,6 +5,8 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
+import app.dalboot.mobiavialdo.com.daleboot.R;
+import app.dalboot.mobiavialdo.com.daleboot.activities.BaseActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,16 +21,17 @@ import retrofit2.Response;
 
 public abstract class GeneralCallBack<T> implements Callback<T> {
 
-    private final Context context;
+    //private final Context context;
+    private BaseActivity activity;
 
 
     /**
      * @purpose Parameter constructor
      * @param context
      */
-    public GeneralCallBack(Context context)
+    public GeneralCallBack(BaseActivity context)
     {
-        this.context = context;
+        this.activity = context;
     }
 
     /*this method will invoked when server gives an reponse and this have multiple implementation according to scenario*/
@@ -48,11 +51,18 @@ public abstract class GeneralCallBack<T> implements Callback<T> {
 
     @Override
     public void onFailure(Call<T> call, Throwable throwable) {
+        activity.hideProgress();
         if (throwable instanceof IOException) {
-            Toast.makeText(context, "No Internet Connection", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, "No Internet Connection", Toast.LENGTH_SHORT).show();
+            activity.showMessage(activity.getString(R.string.no_interconection_error));
+
         }
         else {
-            Toast.makeText(context, "Something goes wrong!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, "Something goes wrong!", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(activity, "Something goes wrong!", Toast.LENGTH_SHORT).show();
+            activity.showMessage(activity.getString(R.string.some_thing_goes_wrong));
+
+
         }
     }
 
@@ -62,7 +72,7 @@ public abstract class GeneralCallBack<T> implements Callback<T> {
      */
     private void onServerFailure( String message)
     {
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
     }
 
     /**

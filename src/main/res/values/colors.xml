@@ -11,7 +11,7 @@
 
     <color name="v_light_grey">#DCDCDC</color>
     <color name="white">#FFFFFF</color>
-    <color name="primary_green">#88C01E</color>
+    <color name="primary_green">#01CD61</color>
     <color name="input_field_blue">#636FAB</color>
     <color name="registration_fiels_blue">#5468A5</color>
     <color name="black">#000000</color>
@@ -19,7 +19,7 @@
     <color name="light_grey">#f1f1f1</color>
     <color name="dark_grey">#696969</color>
     <color name="bg_colorinput">#25AB89</color>
-    <color name="primaryred">#DC143C</color>
-    <!--006633-->
+    <color name="primaryred">#CB0004</color>
+
 
 </resources>

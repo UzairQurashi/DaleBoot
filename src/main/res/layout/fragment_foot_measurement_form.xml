@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ls="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <RelativeLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -81,7 +81,7 @@
                     android:text="@string/ankle_hint"
                     android:textColor="@color/black"
                     android:textSize="@dimen/v_small_text_size"
-                    android:layout_marginTop="@dimen/normal_margin"/>
+                    android:layout_marginTop="@dimen/above_normal_margin"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
                     android:text="@string/foot_vol_label"
                     android:textColor="@color/black"
                     android:textSize="@dimen/v_small_text_size"
-                    android:layout_marginTop="@dimen/normal_margin"/>
+                    android:layout_marginTop="@dimen/above_normal_margin"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -195,7 +195,7 @@
                     android:text="@string/width_label"
                     android:textColor="@color/black"
                     android:textSize="@dimen/v_small_text_size"
-                    android:layout_marginTop="@dimen/normal_margin"/>
+                    android:layout_marginTop="@dimen/above_normal_margin"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -247,13 +247,14 @@
 
 
                 </LinearLayout>
-                <com.farbod.labelledspinner.LabelledSpinner
+                <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
                     android:id="@+id/measurmnt_tool_spinner"
-                    ls:labelText="@string/measurement_tool_hint"
-                    ls:widgetColor="@color/black"
+                    app:labelText="@string/measurement_tool_hint"
+                    app:widgetColor="@color/black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    ls:entries="@color/dark_grey"
+                    app:entries="@color/dark_grey"
+                    android:layout_marginTop="@dimen/above_normal_margin"
 
                     />
 
@@ -263,7 +264,7 @@
                     android:text="@string/size_label"
                     android:textColor="@color/black"
                     android:textSize="@dimen/v_small_text_size"
-                    android:layout_marginTop="@dimen/normal_margin"/>
+                    android:layout_marginTop="@dimen/above_normal_margin"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -323,7 +324,7 @@
                     android:text="@string/arch_length_label"
                     android:textColor="@color/black"
                     android:textSize="@dimen/v_small_text_size"
-                    android:layout_marginTop="@dimen/normal_margin"/>
+                    android:layout_marginTop="@dimen/above_normal_margin"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -380,7 +381,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bootoptions"
-                    android:layout_marginTop="@dimen/normal_margin"
+                    android:layout_marginTop="@dimen/above_normal_margin"
                     />
 
 

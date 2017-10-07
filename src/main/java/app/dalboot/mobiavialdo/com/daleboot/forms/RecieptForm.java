@@ -15,6 +15,7 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
+import app.dalboot.mobiavialdo.com.daleboot.activities.MainActivity;
 import app.dalboot.mobiavialdo.com.daleboot.activities.UserFormActivity;
 import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentRecieptFormBinding;
 import app.dalboot.mobiavialdo.com.daleboot.models.request.Customer;
@@ -90,52 +91,54 @@ public class RecieptForm extends FormsParentFragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
-//    private void addCustomer(Customer customer){
-//        getActualActivity(UserFormActivity.class).showProgress();
-//        RestClient.getAuthAdapter().addCustomers(Hashes.getCustomerKey(customer)).enqueue(new GeneralCallBack<GeneralResponse>(getContext()) {
-//            @Override
-//            public void onSuccess(GeneralResponse response) {
-//                getActualActivity(UserFormActivity.class).hideProgress();
-//                getActualActivity(UserFormActivity.class).showMessage(response.getDeveloper_message());
-//
-//
-//
-//
-//
-//            }
-//        });
-//
-//    }
     private void addCustomer(Customer customer){
         getActualActivity(UserFormActivity.class).showProgress();
-        RestClient.getAuthAdapter().addCustomers(Hashes.getCustomerKey(customer)).enqueue(new Callback<GeneralResponse>() {
+        RestClient.getAuthAdapter().addCustomers(Hashes.getCustomerKey(customer)).enqueue(new GeneralCallBack<GeneralResponse>(getActualActivity(UserFormActivity.class)) {
             @Override
-            public void onResponse(Call<GeneralResponse> call, Response<GeneralResponse> response) {
-                if((response.isSuccessful() ) &&(response!=null))
-                {
-                    getActualActivity(UserFormActivity.class).hideProgress();
-
-                    getActualActivity(UserFormActivity.class).showMessage(response.body().getDeveloper_message());
-
-
-
-                }
-                else {
-                    getActualActivity(UserFormActivity.class).showMessage("Server Error");
-
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<GeneralResponse> call, Throwable t) {
+            public void onSuccess(GeneralResponse response) {
                 getActualActivity(UserFormActivity.class).hideProgress();
-                getActualActivity(UserFormActivity.class).showMessage(t.toString());
+                getActualActivity(UserFormActivity.class).showMessage(response.getDeveloper_message());
+
+
+
 
 
             }
         });
+
     }
+//    private void addCustomer(Customer customer){
+//        getActualActivity(UserFormActivity.class).showProgress();
+//        RestClient.getAuthAdapter().addCustomers(Hashes.getCustomerKey(customer)).enqueue(new Callback<GeneralResponse>() {
+//            @Override
+//            public void onResponse(Call<GeneralResponse> call, Response<GeneralResponse> response) {
+//                if((response.isSuccessful() ) &&(response!=null))
+//                {
+//                    getActualActivity(UserFormActivity.class).hideProgress();
+//                    getActualActivity(UserFormActivity.class).showMessage(response.body().getDeveloper_message());
+//                    getActualActivity(UserFormActivity.class).openActivityWithFinish(MainActivity.class);
+//
+//
+//
+//
+//
+//                }
+//                else {
+//                    getActualActivity(UserFormActivity.class).showMessage("Server Error");
+//
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<GeneralResponse> call, Throwable t) {
+//                getActualActivity(UserFormActivity.class).hideProgress();
+//                getActualActivity(UserFormActivity.class).showMessage(t.toString());
+//
+//
+//            }
+//        });
+//    }
 
     @Override
     public void onDetach() {

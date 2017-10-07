@@ -12,7 +12,7 @@ import app.dalboot.mobiavialdo.com.daleboot.forms.CustomerInfoForm;
 import app.dalboot.mobiavialdo.com.daleboot.forms.FootMeasurementForm;
 import app.dalboot.mobiavialdo.com.daleboot.forms.ObservationsForm;
 import app.dalboot.mobiavialdo.com.daleboot.forms.RecieptForm;
-import app.dalboot.mobiavialdo.com.daleboot.fragments.FormsFragment;
+import app.dalboot.mobiavialdo.com.daleboot.fragments.AllUsersFragment;
 import app.dalboot.mobiavialdo.com.daleboot.fragments.NotificationsFragment;
 
 /**
@@ -27,7 +27,7 @@ public class NavigationUtils {
 
         if(context instanceof MainActivity)
         {
-            adapter.addFragment(FormsFragment.newInstance("", ""), "Forms", null);
+            adapter.addFragment(AllUsersFragment.newInstance("", ""), "Forms", null);
             adapter.addFragment(NotificationsFragment.newInstance("", ""), "Notifications", null);
 
         }
