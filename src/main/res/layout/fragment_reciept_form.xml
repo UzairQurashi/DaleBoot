@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/pickup_date_hint"
-                android:inputType="number"
+                android:focusableInTouchMode="false"
 
 
                 />
@@ -97,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/invoice_number_hint"
-                android:inputType="number"
+
 
 
                 />

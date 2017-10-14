@@ -140,8 +140,8 @@ public class DateTimeUtility {
             //formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
             Date value = formatter.parse(OurDate);
 
-            SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy"); //this format changeable
-            dateFormatter.setTimeZone(TimeZone.getDefault());
+            SimpleDateFormat dateFormatter = new SimpleDateFormat("MM-dd-yyyy",Locale.US); //this format changeable
+            //dateFormatter.setTimeZone(TimeZone.getTimeZone("UTC"));
             OurDate = dateFormatter.format(value);
 
             //Log.d("OurDate", OurDate);
@@ -324,7 +324,7 @@ public class DateTimeUtility {
 
     public static String calendarToDateString(Calendar cal) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy", Locale.US);
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy", Locale.US);
         return sdf.format(cal.getTime());
     }
 
@@ -332,7 +332,7 @@ public class DateTimeUtility {
 
         Calendar cal = Calendar.getInstance();
         try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy", Locale.US);
+            SimpleDateFormat sdf = new SimpleDateFormat("dd MM yyyy", Locale.US);
             cal.setTime(sdf.parse(start_date));// all done
             return cal;
         } catch (Exception e) {

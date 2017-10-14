@@ -57,7 +57,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:hint="@string/previousbrnd_hint"
-               android:inputType="textNoSuggestions"
+               android:inputType="textNoSuggestions|textMultiLine"
 
 
                />
@@ -72,29 +72,121 @@
                android:layout_marginTop="@dimen/above_normal_margin"
 
                />
-           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+           <TextView
                android:id="@+id/add_info_q_five_spinner"
-               app:labelText="@string/add_info_q_five"
-               app:widgetColor="@color/black"
+               android:text="@string/add_info_q_five"
+
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               entries="@color/dark_grey"
-               android:layout_marginTop="@dimen/above_normal_margin"
+               android:textColor="@color/black"
+               android:layout_marginTop="@dimen/above_normal_margin"></TextView>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="3"
+               android:paddingTop="@dimen/normal_padding"
+               android:id="@+id/atttude_sking_checks"
+               android:layout_marginBottom="@dimen/normal_margin"
+               >
+               <CheckBox
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/tensed_label"
+                   android:id="@+id/tensed_check"
+                  android:textColor="@color/dark_grey"
+
+                   />
+               <CheckBox
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/relaxed_label"
+                   android:id="@+id/relaxed_check"
+                   android:textColor="@color/dark_grey"/>
+               <CheckBox
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/aggresive_label"
+                   android:id="@+id/aggressive_check"
+                   android:textColor="@color/dark_grey"/>
+
+           </LinearLayout>
 
 
 
                />
-           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+           <TextView
                android:id="@+id/add_info_q_six_spinner"
-              app:labelText="@string/add_info_q_six"
-               app:widgetColor="@color/black"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               entries="@color/dark_grey"
+               android:textColor="@color/black"
                android:layout_marginTop="@dimen/above_normal_margin"
-
-
+               android:text="@string/add_info_q_six"
                />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="3"
+           android:layout_marginBottom="@dimen/normal_margin"
+           android:id="@+id/preferd_check_one">
+           <CheckBox
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="@string/groomers_label"
+               android:id="@+id/groomers_check"
+               android:textColor="@color/dark_grey"/>
+           <CheckBox
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="@string/powder_label"
+               android:id="@+id/powder_check"
+               android:textColor="@color/dark_grey"/>
+           <CheckBox
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:text="@string/moguls_label"
+               android:id="@+id/moguls_check"
+               android:textColor="@color/dark_grey"/>
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="3"
+               android:layout_marginBottom="@dimen/normal_margin"
+               android:id="@+id/preferd_check_two">
+               <CheckBox
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/flat_label"
+                   android:id="@+id/flat_check"
+                   android:textColor="@color/dark_grey"/>
+               <CheckBox
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/average_label"
+                   android:id="@+id/average_check"
+                   android:textColor="@color/dark_grey"
+                   />
+               <CheckBox
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="@string/steep_label"
+                   android:id="@+id/steep_check"
+                   android:textColor="@color/dark_grey"/>
+
+           </LinearLayout>
 
            <android.support.design.widget.TextInputLayout
                android:layout_width="200dp"
@@ -107,7 +199,6 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:hint="@string/height_hint"
-               android:inputType="number"
 
 
                />
@@ -125,7 +216,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:hint="@string/weight_hint"
-                   android:inputType="number"
+
 
 
                    />
@@ -141,7 +232,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:hint="@string/street_shoe_hint"
-                   android:inputType="number"
+
 
                    />
            </android.support.design.widget.TextInputLayout>

@@ -32,6 +32,8 @@ dependencies {
     /**Materialized views**/
     //compile 'com.github.hamsaadev:RTLMaterialSpinner:V1.0.1'//custom spinner
     //circular progress bar
+    compile 'cn.pedant.sweetalert:library:1.3'
+
 
 
     compile 'com.android.support:appcompat-v7:25.3.1'

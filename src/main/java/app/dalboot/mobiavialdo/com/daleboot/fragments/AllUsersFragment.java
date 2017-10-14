@@ -5,6 +5,7 @@ import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -32,7 +33,7 @@ import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
  * Use the {@link AllUsersFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AllUsersFragment extends FormsParentFragment {
+public class AllUsersFragment extends FormsParentFragment implements SwipeRefreshLayout.OnRefreshListener {
 
     private FragmentFormsBinding formsBinding;
 
@@ -70,6 +71,7 @@ public class AllUsersFragment extends FormsParentFragment {
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,7 +82,9 @@ public class AllUsersFragment extends FormsParentFragment {
     }
 
     private void loadViews() {
-       initrecyclerview();
+        initrecyclerview();
+//        loadSwipeRefreshLayout();
+//        startRefreshLoader();
         getAllCustomers();
 
 
@@ -128,8 +132,10 @@ private void getAllCustomers(){
     RestClient.getAuthAdapter().getcustomers().enqueue(new GeneralCallBack<AllCustomers>(getActualActivity(MainActivity.class)) {
         @Override
         public void onSuccess(AllCustomers response) {
+             getActualActivity(BaseActivity.class).hideProgress();
+
             if(response!=null) {
-                getActualActivity(BaseActivity.class).hideProgress();
+               // getActualActivity(BaseActivity.class).hideProgress();
                 setAdapter(response.getData());
             }
 
@@ -142,6 +148,44 @@ private void getAllCustomers(){
         super.onDetach();
         mListener = null;
     }
+
+    @Override
+    public void onRefresh() {
+
+    }
+//    private void startRefreshLoader() {
+//        if(!formsBinding.swipeRefreshLayout.isRefreshing())
+//            formsBinding.swipeRefreshLayout.post(refreshRunnable);
+//    }
+//    public void stopRefreshLoader() {
+//        /*
+//         * Stop the refresh Progress bar if it is refreshing
+//         */
+//
+//        formsBinding.swipeRefreshLayout.setRefreshing(false);
+//
+//    }
+//    Runnable refreshRunnable = new Runnable() {
+//        @Override
+//        public void run() {
+//            formsBinding.swipeRefreshLayout.setRefreshing(true);
+//        }
+//    };
+
+    /**
+     * set the swipe refresh layout listener and color
+     */
+//    private void loadSwipeRefreshLayout() {
+//        formsBinding.swipeRefreshLayout.setOnRefreshListener(this);
+//
+//        formsBinding.swipeRefreshLayout.setColorSchemeResources(
+//                R.color.colorPrimary,
+//                R.color.colorPrimary,
+//                R.color.colorPrimary);
+//
+//
+//    }
+
 
     /**
      * This interface must be implemented by activities that contain this

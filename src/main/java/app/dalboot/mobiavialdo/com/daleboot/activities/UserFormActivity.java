@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +33,7 @@ public class UserFormActivity extends BaseActivity implements
 
     private ActivityUserFormBinding binding;
     public ViewPager viewPager;
+    private Menu menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +75,8 @@ public class UserFormActivity extends BaseActivity implements
                 setTittle("Additional Information");
                 break;
             case 2:
+
+                //setTittle(String.valueOf(getMultiColorText("Observations\n","(Boot Tech Use Only)","#ffffff","#01CD61")));
                 setTittle("Observations\n(Boot Tech Use Only)");
                 break;
             case 3:
@@ -80,10 +84,14 @@ public class UserFormActivity extends BaseActivity implements
                 break;
             case 4:
                 setTittle("Boot Specifications\n(Boot Tech Use Only)");
+
                 break;
 
             case 5:
                 setTittle("Receipt\n(Boot Tech Use Only)");
+                if(menu!=null) {
+                    menu.findItem(R.id.nav_user_form).setTitle("Done");
+                }
                 break;
 
             default:
@@ -120,7 +128,13 @@ public class UserFormActivity extends BaseActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.form_menu, menu);
+       getMenuInflater().inflate(R.menu.form_menu, menu);
+        this.menu=menu;
+
+//        if(binding.formpager.getCurrentItem()==6){
+//            menu.findItem(R.id.nav_user_form).setTitle("Done");
+//
+//        }
         return true;
     }
 

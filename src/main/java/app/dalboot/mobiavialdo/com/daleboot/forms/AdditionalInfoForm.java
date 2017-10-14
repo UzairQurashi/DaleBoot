@@ -28,6 +28,8 @@ public class AdditionalInfoForm extends FormsParentFragment {
 
     private FragmentAdditionalInfoBinding viewbinding;
     private OnAdditionalInfoInteractionListener mListener;
+    private StringBuilder sking_condition =new StringBuilder();
+    private StringBuilder atttiude_sking=new StringBuilder();
 
     public AdditionalInfoForm() {
         // Required empty public constructor
@@ -71,8 +73,8 @@ public class AdditionalInfoForm extends FormsParentFragment {
         viewbinding.addInfoQTwoSpinner.setItemsArray(upperspinner_items);
         viewbinding.addInfoQThreespinner.setItemsArray(upperspinner_items);
         viewbinding.addInfoQFourSpinner.setItemsArray(ability_level_items);
-        viewbinding.addInfoQFiveSpinner.setItemsArray(att_sking_items);
-        viewbinding.addInfoQSixSpinner.setItemsArray(prefered_sking_items);
+//        viewbinding.addInfoQFiveSpinner.setItemsArray(att_sking_items);
+//        viewbinding.addInfoQSixSpinner.setItemsArray(prefered_sking_items);
 
 
     }
@@ -111,6 +113,69 @@ public class AdditionalInfoForm extends FormsParentFragment {
                                          String atttitude_skii, String preferd_sking_conditions, String height, String weight, String street_shoe_size);
     }
 
+    /**
+     * this method will get all sking option selected items
+     * @return
+     */
+    private String getSkingCondition(){
+
+        if(viewbinding.groomersCheck.isChecked())
+        {
+            appendSKingChecks(viewbinding.groomersCheck.getText().toString());
+
+        }
+         if (viewbinding.powderCheck.isChecked()){
+
+             appendSKingChecks(viewbinding.powderCheck.getText().toString());
+        }
+         if (viewbinding.mogulsCheck.isChecked()){
+             appendSKingChecks(viewbinding.mogulsCheck.getText().toString());
+        }
+         if (viewbinding.flatCheck.isChecked()){
+             appendSKingChecks(viewbinding.flatCheck.getText().toString());
+        }
+         if (viewbinding.averageCheck.isChecked()){
+             appendSKingChecks(viewbinding.averageCheck.getText().toString());
+        }
+         if (viewbinding.steepCheck.isChecked()){
+             appendSKingChecks(viewbinding.steepCheck.getText().toString());
+        }
+        return String.valueOf(sking_condition);
+    }
+
+    private String getAtttiude_sking(){
+
+        if (viewbinding.relaxedCheck.isChecked()){
+            appendatttitudeskingChecks(viewbinding.relaxedCheck.getText().toString());
+        }
+        if (viewbinding.tensedCheck.isChecked()){
+            appendatttitudeskingChecks(viewbinding.tensedCheck.getText().toString());
+        }
+        if (viewbinding.aggressiveCheck.isChecked()){
+            appendatttitudeskingChecks(viewbinding.aggressiveCheck.getText().toString());
+        }
+        return String.valueOf(atttiude_sking);
+    }
+    private void appendSKingChecks(String status) {
+        if (!sking_condition.toString().isEmpty()) {
+            sking_condition.append(",").append(status);
+        } else {
+            sking_condition.append(status);
+        }
+
+    }
+    private void appendatttitudeskingChecks(String status) {
+        if (!atttiude_sking.toString().isEmpty()) {
+            atttiude_sking.append(",").append(status);
+        } else {
+            atttiude_sking.append(status);
+        }
+
+    }
+
+
+
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(EventMessage event) {
         if(event.getPage()==1){
@@ -119,8 +184,10 @@ public class AdditionalInfoForm extends FormsParentFragment {
             Customer.getInstance().setYour_feets((String) viewbinding.addInfoQThreespinner.getSpinner().getSelectedItem());
             Customer.getInstance().setSki_boots(viewbinding.skiboots.getText().toString());
             Customer.getInstance().setAbility_level((String) viewbinding.addInfoQFourSpinner.getSpinner().getSelectedItem());
-            Customer.getInstance().setAttitude_while_skiing((String) viewbinding.addInfoQFiveSpinner.getSpinner().getSelectedItem());
-            Customer.getInstance().setSkiing_condition((String) viewbinding.addInfoQSixSpinner.getSpinner().getSelectedItem());
+
+           Customer.getInstance().setAttitude_while_skiing(getAtttiude_sking());
+            Customer.getInstance().setSkiing_condition((getSkingCondition()));
+//
             Customer.getInstance().setHeight(viewbinding.height.getText().toString());
             Customer.getInstance().setWeight(viewbinding.weight.getText().toString());
             Customer.getInstance().setStreet_shoe_size(viewbinding.streetShoeSize.getText().toString());

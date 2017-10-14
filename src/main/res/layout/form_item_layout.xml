@@ -4,7 +4,7 @@
 <RelativeLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="wrap_content">
     <!--<data>-->
         <!--<variable-->
             <!--name="obj"-->
@@ -86,8 +86,9 @@
                 android:layout_height="wrap_content"
                 android:text="Ubaid"
                 android:id="@+id/salesman"
-                android:layout_marginLeft="@dimen/normal_margin"
-                android:layout_marginRight="@dimen/normal_margin"
+                android:paddingLeft="@dimen/normal_padding"
+                android:maxLines="1"
+
 
 
                />

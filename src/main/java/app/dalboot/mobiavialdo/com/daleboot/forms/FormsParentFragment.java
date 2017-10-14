@@ -16,7 +16,7 @@ public class FormsParentFragment extends Fragment {
     protected String []heel_stance_items=new String[]{"NORMAL","PRONATION","SUPINATION"};
     protected String[]ankle_items=new String[]{"NORMAL","LARGE MEDIAL","LARGE LATERAL"};
     protected String[]exostosis_items=new String[]{"INSTEP BUMP","HALLUX VALGUS","TAILOR'S BUNION","PUMP BUMP","BUNION","MORTON'S FOOT","OTHER"};
-    protected String[]forbed_items=new String[]{"YES","NO","OK","REBUILD"};
+    protected String[]forbed_items=new String[]{"YES","NO","TYPE","REBUILD"};
     protected String[]tools_measures_items=new String[]{"BRANNOCK","MONDO"};
     protected String[]default_items=new String[]{"YES","NO"};
 

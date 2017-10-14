@@ -5,6 +5,8 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 
@@ -128,6 +130,16 @@ public class BaseActivity extends AppCompatActivity {
                 Log.e(TAG, "hideProgress:" + e.getMessage());
             }
         }
+    }
+    protected Spanned getMultiColorText(String text1, String text2, String color1, String color2){
+        String fulltext = "";
+        try {
+            fulltext="<font color='"+color1+"'>" + text1 + "</font>" + " " + "<font color='"+color2+"' ><strong>" + text2 + "</strong></font>";
+        }
+        catch (Exception e){}
+
+        return Html.fromHtml(fulltext);
+
     }
 
 }

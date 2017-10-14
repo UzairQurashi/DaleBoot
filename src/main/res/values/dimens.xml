@@ -91,7 +91,7 @@
     <dimen name="double_extra_large_text_size">64sp</dimen>
     <dimen name="v_large_text_size">32sp</dimen>
     <dimen name="progress_wheel_size_load_more">30dp</dimen>
-    <dimen name="evp_content_inset">16dp</dimen>
+    <dimen name="above_view_padding">16dp</dimen>
     <dimen name="evp_content_inset_half">8dp</dimen>
     <dimen name="evp_content_inset_less">1dp</dimen>
     <dimen name="evp_content_inset_iconbuttons">2dp</dimen>

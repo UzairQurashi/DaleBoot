@@ -1,5 +1,6 @@
 package app.dalboot.mobiavialdo.com.daleboot.forms;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
@@ -8,10 +9,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.Calendar;
 
 import app.dalboot.mobiavialdo.com.daleboot.R;
 import app.dalboot.mobiavialdo.com.daleboot.abstract_classess.GeneralCallBack;
@@ -21,6 +25,9 @@ import app.dalboot.mobiavialdo.com.daleboot.databinding.FragmentRecieptFormBindi
 import app.dalboot.mobiavialdo.com.daleboot.models.request.Customer;
 import app.dalboot.mobiavialdo.com.daleboot.models.response.GeneralResponse;
 import app.dalboot.mobiavialdo.com.daleboot.network.RestClient;
+import app.dalboot.mobiavialdo.com.daleboot.utils.DateTimeUtility;
+import app.dalboot.mobiavialdo.com.daleboot.utils.extras.AlertDialouge;
+import app.dalboot.mobiavialdo.com.daleboot.utils.extras.DialogeCallback;
 import app.dalboot.mobiavialdo.com.daleboot.utils.extras.EventMessage;
 import app.dalboot.mobiavialdo.com.daleboot.utils.extras.Hashes;
 import retrofit2.Call;
@@ -76,9 +83,18 @@ public class RecieptForm extends FormsParentFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        viewbinding= DataBindingUtil.inflate(inflater,R.layout.fragment_reciept_form, container, false);
+        loadviews();
         return viewbinding.getRoot();
     }
 
+    private void loadviews() {
+        viewbinding.pickupDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openStartDatePicker();
+            }
+        });
+    }
 
 
     @Override
@@ -91,13 +107,52 @@ public class RecieptForm extends FormsParentFragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+    /**
+     *@purpose: this method will open a datepicker dialoge and sets selected value to given fields
+     */
+
+    private void openStartDatePicker() {
+        // hideSoftKeyBoardOnOutClicked(binding.getRoot());
+        Calendar calendar = DateTimeUtility.convertDateToCalendarObject(viewbinding.pickupDate.getText().toString());
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                          int dayOfMonth) {
+                        Calendar calendar1 = Calendar.getInstance();
+                        calendar1.set(year,monthOfYear,dayOfMonth);
+                        String date = DateTimeUtility.calendarToDateString(calendar1);
+                        viewbinding.pickupDate.setText(date);
+
+                    }
+                },
+                calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH),
+                1);
+        datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis());
+        datePickerDialog.show();
+    }
+
     private void addCustomer(Customer customer){
         getActualActivity(UserFormActivity.class).showProgress();
         RestClient.getAuthAdapter().addCustomers(Hashes.getCustomerKey(customer)).enqueue(new GeneralCallBack<GeneralResponse>(getActualActivity(UserFormActivity.class)) {
             @Override
             public void onSuccess(GeneralResponse response) {
                 getActualActivity(UserFormActivity.class).hideProgress();
-                getActualActivity(UserFormActivity.class).showMessage(response.getDeveloper_message());
+                AlertDialouge.showContinueLister(getActualActivity(UserFormActivity.class), response.getDeveloper_message(), new DialogeCallback() {
+                    @Override
+                    public void yesCall() {
+                        getActualActivity(UserFormActivity.class).openActivityWithFinish(MainActivity.class);
+
+
+
+                    }
+
+                    @Override
+                    public void noCall() {
+
+                    }
+                });
+                //getActualActivity(UserFormActivity.class).showMessage(response.getDeveloper_message());
 
 
 
@@ -107,38 +162,8 @@ public class RecieptForm extends FormsParentFragment {
         });
 
     }
-//    private void addCustomer(Customer customer){
-//        getActualActivity(UserFormActivity.class).showProgress();
-//        RestClient.getAuthAdapter().addCustomers(Hashes.getCustomerKey(customer)).enqueue(new Callback<GeneralResponse>() {
-//            @Override
-//            public void onResponse(Call<GeneralResponse> call, Response<GeneralResponse> response) {
-//                if((response.isSuccessful() ) &&(response!=null))
-//                {
-//                    getActualActivity(UserFormActivity.class).hideProgress();
-//                    getActualActivity(UserFormActivity.class).showMessage(response.body().getDeveloper_message());
-//                    getActualActivity(UserFormActivity.class).openActivityWithFinish(MainActivity.class);
-//
-//
-//
-//
-//
-//                }
-//                else {
-//                    getActualActivity(UserFormActivity.class).showMessage("Server Error");
-//
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<GeneralResponse> call, Throwable t) {
-//                getActualActivity(UserFormActivity.class).hideProgress();
-//                getActualActivity(UserFormActivity.class).showMessage(t.toString());
-//
-//
-//            }
-//        });
-//    }
+
+
 
     @Override
     public void onDetach() {

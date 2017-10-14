@@ -27,29 +27,108 @@
             android:textSize="@dimen/v_small_text_size"
             android:paddingLeft="@dimen/normal_padding"/>
 
-    <SeekBar
+    <app.dalboot.mobiavialdo.com.daleboot.utils.CustomSeekbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:progressTint="@color/colorPrimary"
-        android:thumbTint="@color/white"
+        android:thumbTint="@color/colorPrimary"
+
         android:layout_marginTop="@dimen/normal_margin"
         android:id="@+id/arch_height_seekbar"
         android:max="25"
+        android:progress="0"
+        android:paddingTop="@dimen/above_view_padding"
+        android:paddingEnd="@dimen/normal_padding"
+        android:paddingStart="@dimen/normal_padding"
+
+
+
 
 
 
         />
-
-        <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
-            android:id="@+id/heel_stancespinner"
-            app:labelText="@string/heel_stance_hint"
-            app:widgetColor="@color/black"
+        <!--left heel stance starts here layouts-->
+        <TextView
+            android:id="@+id/left_heel_stancespinner"
+            android:text="@string/left_heel_stance_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/above_normal_margin"
-
-
+            android:textColor="@color/black"
             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="@dimen/normal_margin">
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/normal_label"
+                android:id="@+id/left_heel_normal_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/pronation_label"
+                android:id="@+id/left_heel_pronation_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/supination_label"
+                android:id="@+id/left_heel_supination_check"
+                android:textColor="@color/dark_grey"/>
+
+
+
+        </LinearLayout>
+        <!--left heel stance ends here layouts-->
+
+        <TextView
+            android:id="@+id/right_heel_stancespinner"
+            android:text="@string/right_heel_stance_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/above_normal_margin"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="@dimen/normal_margin">
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/normal_label"
+                android:id="@+id/right_heel_normal_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/pronation_label"
+                android:id="@+id/right_heel_pronation_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/supination_label"
+                android:id="@+id/right_heel_supination_check"
+                android:textColor="@color/dark_grey"/>
+
+
+
+        </LinearLayout>
+
         <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
             android:id="@+id/ankle_spinner"
             app:labelText="@string/ankle_hint"
@@ -69,27 +148,96 @@
             android:layout_marginTop="@dimen/above_normal_margin"
             />
 
-        <SeekBar
+        <app.dalboot.mobiavialdo.com.daleboot.utils.CustomSeekbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:progressTint="@color/colorPrimary"
-            android:thumbTint="@color/white"
+            android:thumbTint="@color/colorPrimary"
             android:layout_marginTop="@dimen/normal_margin"
             android:id="@+id/dorsifloxion_seekbar"
             android:max="25"
+            android:progress="0"
+            android:paddingTop="@dimen/above_view_padding"
+
+
 
 
             />
-        <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+        <!--exostosis layout starts here -->
+        <TextView
             android:id="@+id/exostosis_spinner"
-            app:labelText="@string/exostosis_hint"
-            app:widgetColor="@color/black"
+           android:text="@string/exostosis_hint"
+           android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:entries="@color/dark_grey"
             android:layout_marginTop="@dimen/above_normal_margin"
 
             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/instep_bump_label"
+                android:id="@+id/instep_bump_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/pump_bump_label"
+                android:id="@+id/pump_bump_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/bunion_label"
+                android:id="@+id/bunion_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/morton_foot_label"
+                android:id="@+id/morton_foot_check"
+                android:textColor="@color/dark_grey"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_marginTop="@dimen/small_margin">
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/halux_valgus_label"
+                android:id="@+id/halux_valgus_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tailor_bunion_label"
+                android:id="@+id/tailor_bunion_check"
+                android:textColor="@color/dark_grey"/>
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/other_label"
+                android:id="@+id/other_check"
+                android:textColor="@color/dark_grey"/>
+        </LinearLayout>
+        <!--exostosis layout ends here -->
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,7 +300,7 @@
 
         <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
             android:id="@+id/food_bed_spinner"
-        app:labelText="@string/exostosis_hint"
+            app:labelText="@string/foot_bed_label"
             app:widgetColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
