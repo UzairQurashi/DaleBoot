@@ -76,8 +76,8 @@ public class BootSpecificationForm extends FormsParentFragment {
     }
 
     private void loadSpinners() {
-        viewbinding.linnerTypeSpinner.setItemsArray(default_items);
-        viewbinding.modelSelectionSpinner.setItemsArray(default_items);
+        viewbinding.linnerTypeSpinner.setItemsArray(liner_types);
+        viewbinding.modelSelectionSpinner.setItemsArray(models_selection);
     }
 
 

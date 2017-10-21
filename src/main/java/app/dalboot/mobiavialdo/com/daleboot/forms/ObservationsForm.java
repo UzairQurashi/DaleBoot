@@ -217,11 +217,11 @@ public class ObservationsForm extends FormsParentFragment {
             Customer.getInstance().setAnkle_select((String) viewbinding.ankleSpinner.getSpinner().getSelectedItem());
             Customer.getInstance().setDoorflexion( String.valueOf(dorsifloxion_seekbar_value+"ft"));
             Customer.getInstance().setExostosis(getexostosis());
-            Customer.getInstance().setDifference_leg_length(viewbinding.leftLeg.getText().toString()+"-"+viewbinding.rightLeg.getText().toString()+"cm");
-            Customer.getInstance().setWindlass(viewbinding.leftWindlass.getText().toString()+"-"+viewbinding.rightWindLass.getText().toString()+"cm");
-            Customer.getInstance().setRom(viewbinding.leftRom.getText().toString()+"-"+viewbinding.rightRom.getText().toString()+"cm");
-            Customer.getInstance().setFoot_bed(viewbinding.leftForefoot.getText().toString()+"-"+viewbinding.rightForefoot.getText().toString()+"cm");
-            Customer.getInstance().setForefoot(viewbinding.leftForefoot.getText().toString()+"-"+viewbinding.rightForefoot.getText().toString()+"cm");
+            Customer.getInstance().setDifference_leg_length(viewbinding.leftLeg.getText().toString()+"-"+viewbinding.rightLeg.getText().toString()+us_metric);
+            Customer.getInstance().setWindlass(viewbinding.leftWindlass.getText().toString()+"-"+viewbinding.rightWindLass.getText().toString()+us_metric);
+            Customer.getInstance().setRom(viewbinding.leftRom.getText().toString()+"-"+viewbinding.rightRom.getText().toString()+us_metric);
+            Customer.getInstance().setFoot_bed(viewbinding.leftForefoot.getText().toString()+"-"+viewbinding.rightForefoot.getText().toString()+us_metric);
+            Customer.getInstance().setForefoot(viewbinding.leftForefoot.getText().toString()+"-"+viewbinding.rightForefoot.getText().toString()+us_metric);
 
 
         }

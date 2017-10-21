@@ -70,20 +70,35 @@ public class UserFormActivity extends BaseActivity implements
         switch (position) {
             case 0:
                 setTittle("Customer Information");
+                if(menu!=null) {
+                    menu.findItem(R.id.nav_user_form).setTitle("Next");
+                }
                 break;
             case 1:
                 setTittle("Additional Information");
+                if(menu!=null) {
+                    menu.findItem(R.id.nav_user_form).setTitle("Next");
+                }
                 break;
             case 2:
 
                 //setTittle(String.valueOf(getMultiColorText("Observations\n","(Boot Tech Use Only)","#ffffff","#01CD61")));
                 setTittle("Observations\n(Boot Tech Use Only)");
+                if(menu!=null) {
+                    menu.findItem(R.id.nav_user_form).setTitle("Next");
+                }
                 break;
             case 3:
                 setTittle("Foot Measurements\n(Boot Tech Use Only)");
+                if(menu!=null) {
+                    menu.findItem(R.id.nav_user_form).setTitle("Next");
+                }
                 break;
             case 4:
                 setTittle("Boot Specifications\n(Boot Tech Use Only)");
+                if(menu!=null) {
+                    menu.findItem(R.id.nav_user_form).setTitle("Next");
+                }
 
                 break;
 
@@ -216,4 +231,15 @@ public class UserFormActivity extends BaseActivity implements
 
     }
 
+    @Override
+    public void onBackPressed() {
+        if(binding.formpager.getCurrentItem()==0){
+            finish();
+        }
+        else {
+            navigatePage(false);
+        }
+
+       // super.onBackPressed();
+    }
 }

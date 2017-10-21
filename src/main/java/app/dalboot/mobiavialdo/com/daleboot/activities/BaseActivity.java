@@ -18,6 +18,7 @@ public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "BaseActivity";
     protected ViewDataBinding parentBinding;
     private ProgressLoader progressLoader;
+    protected String us_metric="in";
    // private AVLoadingIndicatorView avi;
 
 

@@ -19,6 +19,11 @@ public class FormsParentFragment extends Fragment {
     protected String[]forbed_items=new String[]{"YES","NO","TYPE","REBUILD"};
     protected String[]tools_measures_items=new String[]{"BRANNOCK","MONDO"};
     protected String[]default_items=new String[]{"YES","NO"};
+    protected String[] models_selection=new String[]{"VFF","VFF PRO","AK 130"};
+    protected String[] liner_types=new String[]{"WRAP","TONGUE","PLUSH"};
+    protected String us_metric="in";
+
+
 
 
     /**

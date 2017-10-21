@@ -54,15 +54,15 @@
         android:id="@+id/ok"
         />
 
-    <TextView
+    <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:background="@drawable/success"
         android:id="@+id/textView"
-        android:layout_marginBottom="9dp"
+        android:layout_marginBottom="@dimen/extra_large_margin"
         android:layout_above="@+id/succes_label"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="32dp" />
+        android:layout_marginEnd="104dp" />
 
 
 </RelativeLayout>

@@ -55,9 +55,9 @@ public class CantingInfoActivity extends BaseActivity {
     }
 
     private void addCanting(){
-        cant_want=binding.leftCantWand.getText().toString()+"-"+binding.rightCantWand.getText().toString()+"cm";
-        cant_sole=binding.leftBootCantedSole.getText().toString()+"-"+binding.rightBootCantedSole.getText().toString()+"cm";
-        after_cant=binding.leftDegreeAfterCant.getText().toString()+"-"+binding.rightDegreeAfterCant.getText().toString()+"cm";
+        cant_want=binding.leftCantWand.getText().toString()+"-"+binding.rightCantWand.getText().toString()+us_metric;
+        cant_sole=binding.leftBootCantedSole.getText().toString()+"-"+binding.rightBootCantedSole.getText().toString()+us_metric;
+        after_cant=binding.leftDegreeAfterCant.getText().toString()+"-"+binding.rightDegreeAfterCant.getText().toString()+us_metric;
         notes=binding.notes.getText().toString();
         showProgress();
         RestClient.getAuthAdapter().addCanting(cant_want,cant_sole,after_cant,notes,order_id).enqueue(new GeneralCallBack<GeneralResponse>(this) {

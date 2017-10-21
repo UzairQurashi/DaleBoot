@@ -116,13 +116,13 @@ public class FootMeasurementForm extends FormsParentFragment {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(EventMessage event) {
         if(event.getPage()==3){
-            Customer.getInstance().setCalf(viewbinding.leftCalf.getText().toString()+"-"+viewbinding.rightCalf.getText().toString()+"cm");
-            Customer.getInstance().setAnkle((viewbinding.leftAnkle.getText().toString()+"-"+viewbinding.rightAnkle.getText().toString()+"cm"));
-            Customer.getInstance().setFoot_volue((viewbinding.leftFootVol.getText().toString()+"-"+viewbinding.rightFootVol.getText().toString()+"cm"));
-            Customer.getInstance().setWidth((viewbinding.leftWidth.getText().toString()+"-"+viewbinding.rightWidth.getText().toString()+"cm"));
+            Customer.getInstance().setCalf(viewbinding.leftCalf.getText().toString()+"-"+viewbinding.rightCalf.getText().toString()+us_metric);
+            Customer.getInstance().setAnkle((viewbinding.leftAnkle.getText().toString()+"-"+viewbinding.rightAnkle.getText().toString()+us_metric));
+            Customer.getInstance().setFoot_volue((viewbinding.leftFootVol.getText().toString()+"-"+viewbinding.rightFootVol.getText().toString()+us_metric));
+            Customer.getInstance().setWidth((viewbinding.leftWidth.getText().toString()+"-"+viewbinding.rightWidth.getText().toString()+us_metric));
             Customer.getInstance().setMeasurement_below((String) viewbinding.measurmntToolSpinner.getSpinner().getSelectedItem());
-            Customer.getInstance().setArch_length(viewbinding.leftArch.getText().toString()+"-"+viewbinding.rightArch.getText().toString()+"cm");
-            Customer.getInstance().setSize(viewbinding.leftSize.getText().toString()+"-"+viewbinding.rightSize.getText().toString()+"cm");
+            Customer.getInstance().setArch_length(viewbinding.leftArch.getText().toString()+"-"+viewbinding.rightArch.getText().toString()+us_metric);
+            Customer.getInstance().setSize(viewbinding.leftSize.getText().toString()+"-"+viewbinding.rightSize.getText().toString()+us_metric);
 
 
         }
