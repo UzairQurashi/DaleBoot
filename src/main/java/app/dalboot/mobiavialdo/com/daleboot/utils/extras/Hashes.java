@@ -27,7 +27,7 @@ public class Hashes {
         hashMap.put("bone_discomfort", customer.getBone_discomfort());
         hashMap.put("shin_bang", customer.getShin_bang());
         hashMap.put("your_feets", customer.getYour_feets());
-        hashMap.put("ski_boots", customer.getSki_boots());
+       // hashMap.put("ski_boots", customer.getSki_boots());
         hashMap.put("ability_level", customer.getAbility_level());
         hashMap.put("attitude_while_skiing", customer.getAttitude_while_skiing());
         hashMap.put("skiing_condition", customer.getSkiing_condition());
@@ -58,6 +58,24 @@ public class Hashes {
         hashMap.put("pick_date", customer.getPick_date());
         hashMap.put("amount", customer.getAmount());
         hashMap.put("invoice_number", customer.getInvoice_number());
+        hashMap.put("prev_brand",customer.getPrev_brand());
+
+        hashMap.put("prev_brand_model",customer.getPrev_brand_model());
+        hashMap.put("prev_brand_year",customer.getPrev_brand_year());
+
+        hashMap.put("prev_brand_size",customer.getPrev_brand_size());
+
+        hashMap.put("prev_brand_sole_length",customer.getPrev_brand_sole_length());
+
+        hashMap.put("Comments",customer.getComments());
+
+        hashMap.put("years_skiing",customer.getYears_skiing());
+        hashMap.put("avg_ski_days",customer.getAvg_ski_days());
+        hashMap.put("Observations","Nothing");
+
+
+
+
 
         return hashMap;
 

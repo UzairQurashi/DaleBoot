@@ -1,248 +1,393 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<RelativeLayout
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="@dimen/large_padding"
-    tools:context="app.dalboot.mobiavialdo.com.daleboot.forms.AdditionalInfoForm">
 
-   <ScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:paddingRight="@dimen/normal_padding">
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical">
-           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
-               android:id="@+id/add_info_q_one_spinner"
-               app:labelText="@string/add_info_q_one"
-               app:widgetColor="@color/black"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/normal_margin"
-               />
-           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
-               android:id="@+id/add_info_q_two_spinner"
-               app:labelText="@string/add_info_q_two"
-               app:widgetColor="@color/black"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/above_normal_margin"
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/large_padding"
+        tools:context="app.dalboot.mobiavialdo.com.daleboot.forms.AdditionalInfoForm">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/normal_padding">
 
-               />
-           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
-               android:id="@+id/add_info_q_threespinner"
-               app:labelText="@string/add_info_q_three"
-               app:widgetColor="@color/black"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               entries="@color/dark_grey"
-               android:layout_marginTop="@dimen/above_normal_margin"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+                    android:id="@+id/add_info_q_one_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    app:labelText="@string/add_info_q_one"
+                    app:widgetColor="@color/black" />
+
+                <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+                    android:id="@+id/add_info_q_two_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin"
+                    app:labelText="@string/add_info_q_two"
+                    app:widgetColor="@color/black"
 
 
+                    />
 
-               />
-           <android.support.design.widget.TextInputLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/above_normal_margin"               >
-
-           <EditText
-               android:id="@+id/skiboots"
-               style="@style/CustomEditTextStyle"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:hint="@string/previousbrnd_hint"
-               android:inputType="textNoSuggestions|textMultiLine"
+                <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+                    android:id="@+id/add_info_q_threespinner"
+                    entries="@color/dark_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin"
+                    app:labelText="@string/add_info_q_three"
+                    app:widgetColor="@color/black"
 
 
-               />
-       </android.support.design.widget.TextInputLayout>
-           <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
-               android:id="@+id/add_info_q_four_spinner"
-              app:labelText="@string/add_info_q_four"
-               app:widgetColor="@color/black"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               entries="@color/dark_grey"
-               android:layout_marginTop="@dimen/above_normal_margin"
-
-               />
-           <TextView
-               android:id="@+id/add_info_q_five_spinner"
-               android:text="@string/add_info_q_five"
-
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textColor="@color/black"
-               android:layout_marginTop="@dimen/above_normal_margin"></TextView>
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="horizontal"
-               android:weightSum="3"
-               android:paddingTop="@dimen/normal_padding"
-               android:id="@+id/atttude_sking_checks"
-               android:layout_marginBottom="@dimen/normal_margin"
-               >
-               <CheckBox
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:text="@string/tensed_label"
-                   android:id="@+id/tensed_check"
-                  android:textColor="@color/dark_grey"
-
-                   />
-               <CheckBox
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:text="@string/relaxed_label"
-                   android:id="@+id/relaxed_check"
-                   android:textColor="@color/dark_grey"/>
-               <CheckBox
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:text="@string/aggresive_label"
-                   android:id="@+id/aggressive_check"
-                   android:textColor="@color/dark_grey"/>
-
-           </LinearLayout>
+                    />
 
 
-
-               />
-           <TextView
-               android:id="@+id/add_info_q_six_spinner"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textColor="@color/black"
-               android:layout_marginTop="@dimen/above_normal_margin"
-               android:text="@string/add_info_q_six"
-               />
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal"
-           android:weightSum="3"
-           android:layout_marginBottom="@dimen/normal_margin"
-           android:id="@+id/preferd_check_one">
-           <CheckBox
-               android:layout_width="0dp"
-               android:layout_height="wrap_content"
-               android:layout_weight="1"
-               android:text="@string/groomers_label"
-               android:id="@+id/groomers_check"
-               android:textColor="@color/dark_grey"/>
-           <CheckBox
-               android:layout_width="0dp"
-               android:layout_height="wrap_content"
-               android:layout_weight="1"
-               android:text="@string/powder_label"
-               android:id="@+id/powder_check"
-               android:textColor="@color/dark_grey"/>
-           <CheckBox
-               android:layout_width="0dp"
-               android:layout_height="wrap_content"
-               android:layout_weight="1"
-               android:text="@string/moguls_label"
-               android:id="@+id/moguls_check"
-               android:textColor="@color/dark_grey"/>
-
-           </LinearLayout>
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="horizontal"
-               android:weightSum="3"
-               android:layout_marginBottom="@dimen/normal_margin"
-               android:id="@+id/preferd_check_two">
-               <CheckBox
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:text="@string/flat_label"
-                   android:id="@+id/flat_check"
-                   android:textColor="@color/dark_grey"/>
-               <CheckBox
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:text="@string/average_label"
-                   android:id="@+id/average_check"
-                   android:textColor="@color/dark_grey"
-                   />
-               <CheckBox
-                   android:layout_width="0dp"
-                   android:layout_height="wrap_content"
-                   android:layout_weight="1"
-                   android:text="@string/steep_label"
-                   android:id="@+id/steep_check"
-                   android:textColor="@color/dark_grey"/>
-
-           </LinearLayout>
-
-           <android.support.design.widget.TextInputLayout
-               android:layout_width="200dp"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/above_normal_margin"               >
-
-           <EditText
-               android:id="@+id/height"
-               style="@style/CustomEditTextStyle"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:hint="@string/height_hint"
+                   <!--previous ski boots starts here -->
+                <TextView
+                    android:id="@+id/previos_skiboots_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/previousbrnd_hint"
+                    android:layout_marginTop="@dimen/above_normal_margin"
 
 
-               />
-           </android.support.design.widget.TextInputLayout>
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    android:layout_marginTop="@dimen/small_margin">
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/skiboots_brands_inputlabel"
+                    app:errorTextAppearance="@color/black"
+                    >
+                    <EditText
+                        android:id="@+id/skiboots_brands"
+                        style="@style/CustomEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        />
+                </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/skiboots_model_inputlabel"
+                        app:errorTextAppearance="@color/black"
+                        >
+                        <EditText
+                            android:id="@+id/skiboots_model"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-           <android.support.design.widget.TextInputLayout
-               android:layout_width="200dp"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/above_normal_margin"               >
+                            android:inputType="textNoSuggestions|textMultiLine"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/skiboots_year_inputlabel"
+                        app:errorTextAppearance="@color/black"
+                        >
+                        <EditText
+                            android:id="@+id/skiboots_year"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
 
-               <EditText
-                   android:id="@+id/weight"
-                   style="@style/CustomEditTextStyle"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:hint="@string/weight_hint"
+                            android:inputType="textNoSuggestions|textMultiLine"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/skiboots_size_inputlabel"
+                        app:errorTextAppearance="@color/black"
+                        >
+                        <EditText
+                            android:id="@+id/skiboots_size"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textNoSuggestions|textMultiLine"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/skiboots_solelength_inputlabel"
+                        app:errorTextAppearance="@color/black"
+                        >
+                        <EditText
+                            android:id="@+id/skiboots_solelength"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textNoSuggestions|textMultiLine"
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                </LinearLayout>
 
+                <!--previous ski boots ends here -->
+                 <!--skii boots comment box here-->
+                    <EditText
+                        android:id="@+id/skiboots_comments"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        android:hint="@string/skiboots_comments_label"
+                        android:background="@drawable/small_rounded_view"
+                        android:padding="@dimen/normal_padding"
+                        android:gravity="left"
+                        android:layout_marginTop="@dimen/small_margin"
 
+                        />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/skiing_years_inputlabel"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    >
+                    <EditText
+                        android:id="@+id/skiing_years"
+                        style="@style/CustomEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/skiing_year_hint"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        />
+                </android.support.design.widget.TextInputLayout>
 
-                   />
-           </android.support.design.widget.TextInputLayout>
-           <android.support.design.widget.TextInputLayout
-               android:layout_width="200dp"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="@dimen/above_normal_margin"               >
-
-               <EditText
-                   android:id="@+id/street_shoe_size"
-                   style="@style/CustomEditTextStyle"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:hint="@string/street_shoe_hint"
-
-
-                   />
-           </android.support.design.widget.TextInputLayout>
-
-       </LinearLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/normal_margin"
+                    >
+                    <EditText
+                        android:id="@+id/average_skiing_peryear"
+                        style="@style/CustomEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/avg_skiing_year_hint"
+                        android:inputType="textNoSuggestions|textMultiLine"
+                        />
+                </android.support.design.widget.TextInputLayout>
 
 
 
 
-   </ScrollView>
 
-</RelativeLayout>
+
+
+                <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+                    android:id="@+id/add_info_q_four_spinner"
+                    entries="@color/dark_grey"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin"
+                    app:labelText="@string/add_info_q_four"
+                    app:widgetColor="@color/black"
+
+                    />
+
+                <TextView
+                    android:id="@+id/add_info_q_five_spinner"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin"
+                    android:text="@string/add_info_q_five"
+                    android:textColor="@color/black"></TextView>
+
+                <LinearLayout
+                    android:id="@+id/atttude_sking_checks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/normal_margin"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/normal_padding"
+                    android:weightSum="3">
+
+                    <CheckBox
+                        android:id="@+id/tensed_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tensed_label"
+                        android:textColor="@color/dark_grey"
+
+                        />
+
+                    <CheckBox
+                        android:id="@+id/relaxed_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/relaxed_label"
+                        android:textColor="@color/dark_grey" />
+
+                    <CheckBox
+                        android:id="@+id/aggressive_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/aggresive_label"
+                        android:textColor="@color/dark_grey" />
+
+                </LinearLayout>
+
+
+                />
+
+                <TextView
+                    android:id="@+id/add_info_q_six_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin"
+                    android:text="@string/add_info_q_six"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/preferd_check_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/normal_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <CheckBox
+                        android:id="@+id/groomers_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/groomers_label"
+                        android:textColor="@color/dark_grey" />
+
+                    <CheckBox
+                        android:id="@+id/powder_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/powder_label"
+                        android:textColor="@color/dark_grey" />
+
+                    <CheckBox
+                        android:id="@+id/moguls_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/moguls_label"
+                        android:textColor="@color/dark_grey" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/preferd_check_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/normal_margin"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <CheckBox
+                        android:id="@+id/flat_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/flat_label"
+                        android:textColor="@color/dark_grey" />
+
+                    <CheckBox
+                        android:id="@+id/average_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/average_label"
+                        android:textColor="@color/dark_grey" />
+
+                    <CheckBox
+                        android:id="@+id/steep_check"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/steep_label"
+                        android:textColor="@color/dark_grey" />
+
+                </LinearLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin">
+
+                    <EditText
+                        android:id="@+id/height"
+                        style="@style/CustomEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/height_hint"
+
+
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin">
+
+                    <EditText
+                        android:id="@+id/weight"
+                        style="@style/CustomEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/weight_hint"
+
+
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/above_normal_margin">
+
+                    <EditText
+                        android:id="@+id/street_shoe_size"
+                        style="@style/CustomEditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/street_shoe_hint"
+
+
+                        />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
 </layout>

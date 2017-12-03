@@ -79,6 +79,13 @@
     <string name="tailor_bunion_label">TAILOR\'S BUNION</string>
     <string name="other_label">OTHER</string>
     <string name="next">Next</string>
+    <string name="brand_label">BRAND</string>
+    <string name="solelenght_label">SOLE LENGTH</string>
+    <string name="model_label">MODEL</string>
+    <string name="year_label">YEAR</string>
+    <string name="skiboots_comments_label">COMMENTS ON PREVIOUS SKI BOOTS :</string>
+    <string name="skiing_year_hint">HOW MANY YEARS HAVE YOU BEING SKIING ?</string>
+    <string name="avg_skiing_year_hint">AVERAGE NUMBER OF SKI DAYS PER YEAR ?</string>
 
 
 </resources>

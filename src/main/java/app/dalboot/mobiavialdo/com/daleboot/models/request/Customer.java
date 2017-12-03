@@ -54,6 +54,92 @@ public class Customer {
     private String amount;
     private String  invoice_number;
 
+
+    private String prev_brand;
+    private String prev_brand_model;
+    private String prev_brand_year;
+    private String prev_brand_size;
+    private String prev_brand_sole_length;
+    private String Comments;
+    private String years_skiing;
+    private String avg_ski_days;
+    private String Observations;
+
+
+    public String getPrev_brand() {
+        return prev_brand;
+    }
+
+    public void setPrev_brand(String prev_brand) {
+        this.prev_brand = prev_brand;
+    }
+
+
+    public String getPrev_brand_model() {
+        return prev_brand_model;
+    }
+
+    public void setPrev_brand_model(String prev_brand_model) {
+        this.prev_brand_model = prev_brand_model;
+    }
+
+    public String getPrev_brand_year() {
+        return prev_brand_year;
+    }
+
+    public void setPrev_brand_year(String prev_brand_year) {
+        this.prev_brand_year = prev_brand_year;
+    }
+
+    public String getPrev_brand_size() {
+        return prev_brand_size;
+    }
+
+    public void setPrev_brand_size(String prev_brand_size) {
+        this.prev_brand_size = prev_brand_size;
+    }
+
+    public String getPrev_brand_sole_length() {
+        return prev_brand_sole_length;
+    }
+
+    public void setPrev_brand_sole_length(String prev_brand_sole_length) {
+        this.prev_brand_sole_length = prev_brand_sole_length;
+    }
+
+    public String getComments() {
+        return Comments;
+    }
+
+    public void setComments(String comments) {
+        Comments = comments;
+    }
+
+    public String getYears_skiing() {
+        return years_skiing;
+    }
+
+    public void setYears_skiing(String years_skiing) {
+        this.years_skiing = years_skiing;
+    }
+
+    public String getAvg_ski_days() {
+        return avg_ski_days;
+    }
+
+    public void setAvg_ski_days(String avg_ski_days) {
+        this.avg_ski_days = avg_ski_days;
+    }
+
+    public String getObservations() {
+        return Observations;
+    }
+
+    public void setObservations(String observations) {
+        Observations = observations;
+    }
+
+
     /**
      * private constructor
      */

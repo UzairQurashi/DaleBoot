@@ -124,14 +124,14 @@ public class CustomerInfoForm extends FormsParentFragment {
 
             // if(isValidate()){
                  Customer.getInstance().setFirst_name(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setLast_name(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setStreet(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setOccupation(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setTel(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setZip_code(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setState(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setCity(viewbinding.firstname.getText().toString());
-                 Customer.getInstance().setEmail(viewbinding.firstname.getText().toString());
+                 Customer.getInstance().setLast_name(viewbinding.lastname.getText().toString());
+                 Customer.getInstance().setStreet(viewbinding.street.getText().toString());
+                 Customer.getInstance().setOccupation(viewbinding.occupation.getText().toString());
+                 Customer.getInstance().setTel(viewbinding.telephone.getText().toString());
+                 Customer.getInstance().setZip_code(viewbinding.zipcode.getText().toString());
+                 Customer.getInstance().setState(viewbinding.state.getText().toString());
+                 Customer.getInstance().setCity(viewbinding.city.getText().toString());
+                 Customer.getInstance().setEmail(viewbinding.email.getText().toString());
 
 
 

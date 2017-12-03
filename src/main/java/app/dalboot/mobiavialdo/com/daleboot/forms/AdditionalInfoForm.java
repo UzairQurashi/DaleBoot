@@ -73,8 +73,17 @@ public class AdditionalInfoForm extends FormsParentFragment {
         viewbinding.addInfoQTwoSpinner.setItemsArray(upperspinner_items);
         viewbinding.addInfoQThreespinner.setItemsArray(upperspinner_items);
         viewbinding.addInfoQFourSpinner.setItemsArray(ability_level_items);
-//        viewbinding.addInfoQFiveSpinner.setItemsArray(att_sking_items);
-//        viewbinding.addInfoQSixSpinner.setItemsArray(prefered_sking_items);
+        setInnerLabels();
+
+
+    }
+
+    private void setInnerLabels() {
+        viewbinding.skibootsBrandsInputlabel.setError(getResources().getString(R.string.brand_label));
+        viewbinding.skibootsModelInputlabel.setError(getResources().getString(R.string.model_label));
+        viewbinding.skibootsSizeInputlabel.setError(getResources().getString(R.string.size_label));
+        viewbinding.skibootsYearInputlabel.setError(getResources().getString(R.string.year_label));
+        viewbinding.skibootsSolelengthInputlabel.setError(getResources().getString(R.string.solelenght_label));
 
 
     }
@@ -182,7 +191,17 @@ public class AdditionalInfoForm extends FormsParentFragment {
             Customer.getInstance().setBone_discomfort((String) viewbinding.addInfoQOneSpinner.getSpinner().getSelectedItem());
             Customer.getInstance().setShin_bang((String) viewbinding.addInfoQTwoSpinner.getSpinner().getSelectedItem());
             Customer.getInstance().setYour_feets((String) viewbinding.addInfoQThreespinner.getSpinner().getSelectedItem());
-            Customer.getInstance().setSki_boots(viewbinding.skiboots.getText().toString());
+            Customer.getInstance().setPrev_brand(viewbinding.skibootsBrands.getText().toString());
+            Customer.getInstance().setPrev_brand_model(viewbinding.skibootsModel.getText().toString());
+            Customer.getInstance().setPrev_brand_size(viewbinding.skibootsSize.getText().toString());
+            Customer.getInstance().setPrev_brand_year(viewbinding.skibootsYear.getText().toString());
+            Customer.getInstance().setPrev_brand_sole_length(viewbinding.skibootsSolelength.getText().toString());
+            Customer.getInstance().setComments(viewbinding.skibootsComments.getText().toString());
+            Customer.getInstance().setAvg_ski_days(viewbinding.averageSkiingPeryear.getText().toString());
+            Customer.getInstance().setYears_skiing(viewbinding.skiingYears.getText().toString());
+
+
+
             Customer.getInstance().setAbility_level((String) viewbinding.addInfoQFourSpinner.getSpinner().getSelectedItem());
 
            Customer.getInstance().setAttitude_while_skiing(getAtttiude_sking());
