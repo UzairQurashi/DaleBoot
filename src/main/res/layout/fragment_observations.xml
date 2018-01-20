@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/arch_height_label"
+            android:text="@string/left_arch_height_label"
             android:textColor="@color/black"
             android:textSize="@dimen/v_small_text_size"
             android:paddingLeft="@dimen/normal_padding"/>
@@ -32,21 +32,35 @@
         android:layout_height="wrap_content"
         android:progressTint="@color/colorPrimary"
         android:thumbTint="@color/colorPrimary"
-
         android:layout_marginTop="@dimen/normal_margin"
-        android:id="@+id/arch_height_seekbar"
+        android:id="@+id/left_arch_height_seekbar"
         android:max="25"
         android:progress="0"
         android:paddingTop="@dimen/above_view_padding"
         android:paddingEnd="@dimen/normal_padding"
         android:paddingStart="@dimen/normal_padding"
-
-
-
-
-
-
         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/right_arch_height_label"
+            android:textColor="@color/black"
+            android:textSize="@dimen/v_small_text_size"
+            android:paddingLeft="@dimen/normal_padding"/>
+
+        <app.dalboot.mobiavialdo.com.daleboot.utils.CustomSeekbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/colorPrimary"
+            android:thumbTint="@color/colorPrimary"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:id="@+id/right_arch_height_seekbar"
+            android:max="25"
+            android:progress="0"
+            android:paddingTop="@dimen/above_view_padding"
+            android:paddingEnd="@dimen/normal_padding"
+            android:paddingStart="@dimen/normal_padding"
+            />
         <!--left heel stance starts here layouts-->
         <TextView
             android:id="@+id/left_heel_stancespinner"
@@ -130,8 +144,18 @@
         </LinearLayout>
 
         <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
-            android:id="@+id/ankle_spinner"
-            app:labelText="@string/ankle_hint"
+            android:id="@+id/left_ankle_spinner"
+            app:labelText="@string/left_ankle_hint"
+            app:widgetColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:entries="@color/dark_grey"
+            android:layout_marginTop="@dimen/above_normal_margin"
+
+            />
+        <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+            android:id="@+id/right_ankle_spinner"
+            app:labelText="@string/right_ankle_hint"
             app:widgetColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

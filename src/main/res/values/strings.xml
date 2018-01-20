@@ -25,19 +25,27 @@
     <string name="height_hint">HEIGHT</string>
     <string name="street_shoe_hint">STREET SHOE SIZE</string>
     <string name="arch_height_label">ARCH HEIGHT</string>
+    <string name="left_arch_height_label">LEFT ARCH HEIGHT</string>
+    <string name="right_arch_height_label">RIGHT ARCH HEIGHT</string>
+
+
     <string name="heel_stance_hint">HEEL STANCE</string>
     <string name="ankle_hint">ANKLE</string>
+    <string name="left_ankle_hint">LEFT ANKLE</string>
+    <string name="right_ankle_hint">RIGHT ANKLE</string>
+    <string name="ankle_circum_hint">2 ANKLE (Circumference)</string>
+
     <string name="dor_suf_label">DORSIFLEXION</string>
     <string name="exostosis_hint">EXOSTOSIS</string>
     <string name="diff_lenght_legs_label">DIFFERENCE IN LEGS LENGTH</string>
     <string name="left_leg_hint">L:\u0020\u0020\u0020\u0020\u0020 <u><b>in</b></u></string>
     <string name="right_leg_hint">R:\u0020\u0020\u0020\u0020\u0020 <u><b>in</b></u></string>
-    <string name="calf_label">CALF</string>
-    <string name="foot_vol_label">FOOT VOLUME</string>
-    <string name="width_label">WIDTH</string>
+    <string name="calf_label">1 CALF (Circumference)</string>
+    <string name="foot_vol_label">3 FOOT VOLUME (Circumference)</string>
+    <string name="width_label">5 WIDTH</string>
     <string name="measurement_tool_hint">TOOL TO BE USED FOR MEASUREMENT BELOW</string>
-    <string name="size_label">SIZE</string>
-    <string name="arch_length_label">ARCH LENGTH</string>
+    <string name="size_label">4 SIZE</string>
+    <string name="arch_length_label">6 ARCH LENGTH</string>
     <string name="model_selection_hint">SUGGESTED MODEL</string>
     <string name="linner_size_hint">LINER SIZE</string>
     <string name="linner_type_hint">SUGGESTED LINER TYPE</string>

@@ -78,7 +78,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ankle_hint"
+                    android:text="@string/ankle_circum_hint"
                     android:textColor="@color/black"
                     android:textSize="@dimen/v_small_text_size"
                     android:layout_marginTop="@dimen/above_normal_margin"/>
@@ -188,6 +188,64 @@
                             />
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/size_label"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/v_small_text_size"
+                    android:layout_marginTop="@dimen/above_normal_margin"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:id="@+id/size_layout">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginRight="@dimen/normal_margin"
+
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/left_size"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/left_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="@dimen/normal_margin"
+
+
+                        >
+
+                        <EditText
+                            android:id="@+id/right_size"
+                            style="@style/CustomEditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/right_leg_hint"
+                            android:inputType="number"
+
+
+                            />
+                    </android.support.design.widget.TextInputLayout>
+
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -247,75 +305,8 @@
 
 
                 </LinearLayout>
-                <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
-                    android:id="@+id/measurmnt_tool_spinner"
-                    app:labelText="@string/measurement_tool_hint"
-                    app:widgetColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:entries="@color/dark_grey"
-                    android:layout_marginTop="@dimen/above_normal_margin"
-
-                    />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/size_label"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/v_small_text_size"
-                    android:layout_marginTop="@dimen/above_normal_margin"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2"
-                    android:id="@+id/size_layout">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginRight="@dimen/normal_margin"
 
 
-
-                        >
-
-                        <EditText
-                            android:id="@+id/left_size"
-                            style="@style/CustomEditTextStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/left_leg_hint"
-                            android:inputType="number"
-
-
-                            />
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="@dimen/normal_margin"
-
-
-                        >
-
-                        <EditText
-                            android:id="@+id/right_size"
-                            style="@style/CustomEditTextStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/right_leg_hint"
-                            android:inputType="number"
-
-
-                            />
-                    </android.support.design.widget.TextInputLayout>
-
-
-                </LinearLayout>
 
 
                 <TextView
@@ -377,6 +368,17 @@
 
 
                 </LinearLayout>
+                <app.dalboot.mobiavialdo.com.daleboot.utils.LabelledSpinner
+                    android:id="@+id/measurmnt_tool_spinner"
+                    app:labelText="@string/measurement_tool_hint"
+                    app:widgetColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:entries="@color/dark_grey"
+                    android:layout_marginTop="@dimen/above_normal_margin"
+
+                    />
+
                 <ImageView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

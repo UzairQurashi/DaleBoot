@@ -33,7 +33,7 @@ public class ObservationsForm extends FormsParentFragment {
 
     private OnFragmentInteractionListener mListener;
     private FragmentObservationsBinding viewbinding;
-    private int arch_height_seekbar_value,dorsifloxion_seekbar_value=1;
+    private int left_arch_height_seekbar_value,right_arch_height_seekbar_value,dorsifloxion_seekbar_value=1;
     private StringBuilder left_heel_stance=new StringBuilder();
     private StringBuilder right_heel_stance=new StringBuilder();
     private StringBuilder exostosis=new StringBuilder();
@@ -82,7 +82,9 @@ public class ObservationsForm extends FormsParentFragment {
     }
 
     private void setListners() {
-        viewbinding.archHeightSeekbar.setOnSeekBarChangeListener(new OnSeekBarProgressListner(viewbinding.archHeightSeekbar));
+        viewbinding.leftArchHeightSeekbar.setOnSeekBarChangeListener(new OnSeekBarProgressListner(viewbinding.leftArchHeightSeekbar));
+        viewbinding.rightArchHeightSeekbar.setOnSeekBarChangeListener(new OnSeekBarProgressListner(viewbinding.rightArchHeightSeekbar));
+
         viewbinding.dorsifloxionSeekbar.setOnSeekBarChangeListener(new OnSeekBarProgressListner(viewbinding.dorsifloxionSeekbar));
     }
 
@@ -91,8 +93,10 @@ public class ObservationsForm extends FormsParentFragment {
      */
     private void loadSpinners() {
         //viewbinding.heelStancespinner.setItemsArray(heel_stance_items);
-        viewbinding.ankleSpinner.setItemsArray(ankle_items);
-       // viewbinding.exostosisSpinner.setItemsArray(exostosis_items);
+        viewbinding.leftAnkleSpinner.setItemsArray(ankle_items);
+        viewbinding.rightAnkleSpinner.setItemsArray(ankle_items);
+
+        // viewbinding.exostosisSpinner.setItemsArray(exostosis_items);
         viewbinding.foodBedSpinner.setItemsArray(forbed_items);
     }
 
@@ -210,11 +214,11 @@ public class ObservationsForm extends FormsParentFragment {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(EventMessage event) {
         if(event.getPage()==2){
-            Customer.getInstance().setArch_height(String.valueOf(arch_height_seekbar_value+"ft"));
+            Customer.getInstance().setArch_height(String.valueOf("L:"+left_arch_height_seekbar_value+"ft"+"R:"+right_arch_height_seekbar_value+"ft"));
 
            Customer.getInstance().setHeel_stance("L:"+getleftheelstance()+"R:"+getrightheelstance());
 
-            Customer.getInstance().setAnkle_select((String) viewbinding.ankleSpinner.getSpinner().getSelectedItem());
+            Customer.getInstance().setAnkle_select("L:"+(String) viewbinding.leftAnkleSpinner.getSpinner().getSelectedItem()+"R:"+viewbinding.rightAnkleSpinner.getSpinner().getSelectedItem());
             Customer.getInstance().setDoorflexion( String.valueOf(dorsifloxion_seekbar_value+"ft"));
             Customer.getInstance().setExostosis(getexostosis());
             Customer.getInstance().setDifference_leg_length(viewbinding.leftLeg.getText().toString()+"-"+viewbinding.rightLeg.getText().toString()+us_metric);
@@ -249,8 +253,11 @@ public class ObservationsForm extends FormsParentFragment {
         @Override
         public void onStopTrackingTouch(SeekBar seekBar) {
             switch (view.getId()){
-                case  R.id.arch_height_seekbar:
-                    arch_height_seekbar_value= seekBar.getProgress();
+                case  R.id.left_arch_height_seekbar:
+                    left_arch_height_seekbar_value= seekBar.getProgress();
+                    break;
+                case  R.id.right_arch_height_seekbar:
+                    right_arch_height_seekbar_value= seekBar.getProgress();
                     break;
 
                 case  R.id.dorsifloxion_seekbar:
