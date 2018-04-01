@@ -1,4 +1,8 @@
 # Add project specific ProGuard rules here.
+# -keep class cn.pedant.SweetAlert.Rotate3dAnimation {
+#    public <init>(...);
+# }
+
 # By default, the flags in this file are appended to flags specified
 # in /home/attribe/Downloads/sdk/android-sdk-linux/tools/proguard/proguard-android.txt
 # You can edit the include path and order by changing the proguardFiles

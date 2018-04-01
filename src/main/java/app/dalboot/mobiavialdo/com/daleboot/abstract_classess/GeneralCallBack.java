@@ -13,7 +13,7 @@ import retrofit2.Response;
 
 
 /**
- * Author: Muhammad Shahab.
+ * Author: Uzair Qureshi.
  * Organization: Mobitribe
  * Date: 8/28/17
  * Description: General Callback for all api calls
